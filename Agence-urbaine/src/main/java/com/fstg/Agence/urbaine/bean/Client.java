@@ -20,7 +20,6 @@ public class Client {
 
 
 	public Client(Long id, String nom, String prenom, Long tel, String adresse) {
-		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
