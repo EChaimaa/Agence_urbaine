@@ -8,5 +8,5 @@ import com.fstg.Agence.urbaine.bean.User;
 
 @Repository
 public interface RoleDao extends JpaRepository<Role, Long> {
-    public Role findByUser(User user);
+    
 }

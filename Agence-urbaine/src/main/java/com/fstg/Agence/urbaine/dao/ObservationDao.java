@@ -8,6 +8,9 @@ package com.fstg.Agence.urbaine.dao;
 import com.fstg.Agence.urbaine.bean.Dossier;
 import com.fstg.Agence.urbaine.bean.Observation;
 import com.fstg.Agence.urbaine.bean.User;
+
+import java.util.List;
+
 import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
 import org.springframework.stereotype.Repository;
 
@@ -17,5 +20,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ObservationDao extends JpaAttributeConverter<Observation, Long>{
-    public Observation findByUserAndDossier(User user, Dossier dossier);
+    public List<Observation> findByUserAndDossier(User user, Dossier dossier);
+    public List<Observation> findByDossier(Dossier dossier);
+    public List<Observation> findByUser(User user);
 }
