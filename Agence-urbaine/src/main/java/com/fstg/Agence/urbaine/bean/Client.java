@@ -18,12 +18,16 @@ public class Client {
 	public Client() {
 	}
 
-	public Client(Long id, String nom, String prenom, Long tel) {
+
+	public Client(Long id, String nom, String prenom, Long tel, String adresse) {
+		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.tel = tel;
+		this.adresse = adresse;
 	}
+
 
 
 	public String getPrenom() {
