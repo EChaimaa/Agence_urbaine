@@ -25,20 +25,20 @@ public class Commission {
     @Temporal(TemporalType.DATE)
     private Date dateFinCommission;
     @ManyToOne
-    private MembreCommision chefCommision;
+    private MembreCommission chefCommission;
     @OneToMany
-    private List<CommisionItem> commisionItems;
+    private List<CommissionItem> commissionItems;
 
     public Commission() {
     }
 
-    public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommision chefCommision,
-            List<CommisionItem> commisionItems) {
+    public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommission chefCommision,
+            List<CommissionItem> commissionItems) {
         this.id = id;
         this.dateDepartCommission = dateDepartCommission;
         this.dateFinCommission = dateFinCommission;
-        this.chefCommision = chefCommision;
-        this.commisionItems = commisionItems;
+        this.chefCommission = chefCommision;
+        this.commissionItems = commissionItems;
     }
 
     public Long getId() {
@@ -61,12 +61,12 @@ public class Commission {
         this.ref = ref;
     }
 
-    public List<CommisionItem> getCommisionItems() {
-        return commisionItems;
+    public List<CommissionItem> getCommissionItems() {
+        return commissionItems;
     }
 
-    public void setCommisionItems(List<CommisionItem> commisionItems) {
-        this.commisionItems = commisionItems;
+    public void setCommissionItems(List<CommissionItem> commissionItems) {
+        this.commissionItems = commissionItems;
     }
 
     public void setDateDepartCommission(Date dateDepartCommission) {
@@ -81,18 +81,18 @@ public class Commission {
         this.dateFinCommission = dateFinCommission;
     }
 
-    public MembreCommision getChefCommision() {
-        return chefCommision;
+    public MembreCommission getChefCommision() {
+        return chefCommission;
     }
 
-    public void setChefCommision(MembreCommision chefCommision) {
-        this.chefCommision = chefCommision;
+    public void setChefCommision(MembreCommission chefCommision) {
+        this.chefCommission = chefCommision;
     }
 
     @Override
     public String toString() {
         return "Commission [id=" + id + ", dateDepartCommission=" + dateDepartCommission + ", dateFinCommission="
-                + dateFinCommission + ", chefCommision=" + chefCommision + ", commisionItems=" + commisionItems + "]";
+                + dateFinCommission + ", chefCommission=" + chefCommission + ", commisionItems=" + commissionItems + "]";
     }
 
 }

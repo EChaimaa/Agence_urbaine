@@ -12,5 +12,7 @@ import com.fstg.Agence.urbaine.bean.Commission;
 public interface CommissionDao extends JpaRepository<Commission, Long> {
    public Commission findByRef(String ref);
    public List<Commission> findByDateDepartCommission(Date date);
+   public List<Commission> findByDateFinCommission(Date date);
+   public List<Commission> findByChefCommission(Date date);
    
 }

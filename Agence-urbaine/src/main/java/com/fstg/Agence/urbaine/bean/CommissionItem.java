@@ -11,24 +11,24 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class CommisionItem {
+public class CommissionItem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
-	private MembreCommision membreCommision;
+	private MembreCommission membreCommission;
 	@ManyToOne
 	private Commission commission;
 	@Temporal(TemporalType.DATE)
 	private Date dateAffectation;
 
-	public CommisionItem() {
+	public CommissionItem() {
 	}
 
-	public CommisionItem(MembreCommision membreCommision, Commission commission, Date dateAffectation) {
+	public CommissionItem(MembreCommission membreCommission, Commission commission, Date dateAffectation) {
 		super();
-		this.membreCommision = membreCommision;
+		this.membreCommission = membreCommission;
 		this.commission = commission;
 		this.dateAffectation = dateAffectation;
 	}
@@ -41,12 +41,12 @@ public class CommisionItem {
 		this.id = id;
 	}
 
-	public MembreCommision getMembreCommision() {
-		return membreCommision;
+	public MembreCommission getMembreCommission() {
+		return membreCommission;
 	}
 
-	public void setMembreCommision(MembreCommision membreCommision) {
-		this.membreCommision = membreCommision;
+	public void setMembreCommission(MembreCommission membreCommission) {
+		this.membreCommission = membreCommission;
 	}
 
 	public Commission getCommission() {
@@ -67,7 +67,7 @@ public class CommisionItem {
 
 	@Override
 	public String toString() {
-		return "CommisionItem [membreCommision=" + membreCommision + ", commission=" + commission + ", dateAffectation="
+		return "CommisionItem [membreCommission=" + membreCommission + ", commission=" + commission + ", dateAffectation="
 				+ dateAffectation + "]";
 	}
 
