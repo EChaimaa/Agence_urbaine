@@ -10,6 +10,7 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String ref;
 	private String nom;
 	private String prenom;
 	private Long tel;
@@ -69,10 +70,22 @@ public class Client {
 		this.adresse = adresse;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + ", adresse=" + adresse
-				+ "]";
+		return "Client [id=" + id + ", ref=" + ref + ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel
+				+ ", adresse=" + adresse + "]";
+	}
+
+
+	public String getRef() {
+		return ref;
+	}
+
+
+	public void setRef(String ref) {
+		this.ref = ref;
 	}
 
 	

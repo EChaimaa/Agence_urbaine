@@ -25,8 +25,10 @@ public class Commission {
     @Temporal(TemporalType.DATE)
     private Date dateFinCommission;
     @ManyToOne
+    private TypeCommission typeCommission;
+    @ManyToOne
     private MembreCommission chefCommission;
-    @OneToMany
+    @OneToMany(mappedBy = "commission")
     private List<CommissionItem> commissionItems;
 
     public Commission() {
@@ -89,10 +91,21 @@ public class Commission {
         this.chefCommission = chefCommision;
     }
 
-    @Override
-    public String toString() {
-        return "Commission [id=" + id + ", dateDepartCommission=" + dateDepartCommission + ", dateFinCommission="
-                + dateFinCommission + ", chefCommission=" + chefCommission + ", commisionItems=" + commissionItems + "]";
-    }
+	public TypeCommission getTypeCommission() {
+		return typeCommission;
+	}
+
+	public void setTypeCommission(TypeCommission typeCommission) {
+		this.typeCommission = typeCommission;
+	}
+
+	@Override
+	public String toString() {
+		return "Commission [id=" + id + ", ref=" + ref + ", dateDepartCommission=" + dateDepartCommission
+				+ ", dateFinCommission=" + dateFinCommission + ", typeCommission=" + typeCommission
+				+ ", chefCommission=" + chefCommission + ", commissionItems=" + commissionItems + "]";
+	}
+	
+	
 
 }

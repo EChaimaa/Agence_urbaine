@@ -15,6 +15,6 @@ public interface CommissionItemDao extends JpaRepository<CommissionItem, Long> {
     public List<CommissionItem> findByCommission(Commission commission);
     public List<CommissionItem> findByMembreCommission(MembreCommission membreCommission);
     
-    public List<CommissionItem> findByCommissionAndMembreComission(Commission commission, MembreCommission membreCommission);
+    public List<CommissionItem> findByCommissionAndMembreCommission(Commission commission, MembreCommission membreCommission);
     public List<CommissionItem> findByDateAffectation(Date date);
 }
