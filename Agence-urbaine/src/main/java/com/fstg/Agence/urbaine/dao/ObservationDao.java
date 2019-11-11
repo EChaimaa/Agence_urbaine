@@ -11,7 +11,7 @@ import com.fstg.Agence.urbaine.bean.User;
 
 import java.util.List;
 
-import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * @author Chaimaa
  */
 @Repository
-public interface ObservationDao extends JpaAttributeConverter<Observation, Long>{
+public interface ObservationDao extends JpaRepository<Observation, Long>{
     public List<Observation> findByUserAndDossier(User user, Dossier dossier);
     public List<Observation> findByDossier(Dossier dossier);
     public List<Observation> findByUser(User user);

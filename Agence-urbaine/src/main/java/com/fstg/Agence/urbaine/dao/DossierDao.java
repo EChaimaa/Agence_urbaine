@@ -15,13 +15,13 @@ import ch.qos.logback.core.net.server.Client;
 import java.util.Date;
 import java.util.List;
 
-import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Chaimaa
  */
-public interface DossierDao extends JpaAttributeConverter<Dossier, Long> {
+public interface DossierDao extends JpaRepository<Dossier, Long> {
     public Dossier findByRef(String ref);
     List<Dossier> findByDateArrive(Date date);
     List<Dossier> findByClient(Client client);
