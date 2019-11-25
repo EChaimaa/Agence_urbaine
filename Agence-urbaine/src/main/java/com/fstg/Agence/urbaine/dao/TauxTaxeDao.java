@@ -14,4 +14,5 @@ public interface TauxTaxeDao extends JpaRepository<TauxTaxe, Long> {
 	 //public List<TauxTaxe> findByDateFinApplicationGreaterThanAndDateDepartApplicationLowerThan(Date date);
 	 public List<TauxTaxe> findByTypeDossier(TypeDossier typeDossier);
 	 public List<TauxTaxe> findByTypeProjet(TypeProjet typeProjet);
+	 public void save(TypeDossier typeDossier);
 }
