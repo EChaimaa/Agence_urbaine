@@ -12,9 +12,12 @@ import com.fstg.Agence.urbaine.bean.MembreCommission;
 
 @Repository
 public interface CommissionItemDao extends JpaRepository<CommissionItem, Long> {
-    public List<CommissionItem> findByCommission(Commission commission);
-    public List<CommissionItem> findByMembreCommission(MembreCommission membreCommission);
-    
-    public List<CommissionItem> findByCommissionAndMembreCommission(Commission commission, MembreCommission membreCommission);
-    public List<CommissionItem> findByDateAffectation(Date date);
+	public List<CommissionItem> findByCommission(Commission commission);
+
+	public List<CommissionItem> findByMembreCommission(MembreCommission membreCommission);
+
+	public List<CommissionItem> findByCommissionAndMembreCommission(Commission commission,
+			MembreCommission membreCommission);
+
+	public List<CommissionItem> findByDateAffectation(Date date);
 }

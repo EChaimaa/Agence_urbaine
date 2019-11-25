@@ -55,5 +55,11 @@ public class TauxTaxeServiceImpl implements TauxTaxeService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<TauxTaxe> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

@@ -15,4 +15,5 @@ public interface TauxTaxeService {
 	public List<TauxTaxe> findByDateDepartApplicationGreaterThan(Date date);
 	public List<TauxTaxe> findByDateFintApplication(Date date);
 	public TauxTaxe findTaxe(Date daateDepart, Date dateFin, TypeDossier typeDossier, TypeProjet typeProjet);
-}
+	public List<TauxTaxe> findAll();
+	}

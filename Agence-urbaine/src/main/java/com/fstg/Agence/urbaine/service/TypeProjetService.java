@@ -1,5 +1,9 @@
 package com.fstg.Agence.urbaine.service;
 
-public interface TypeProjetService {
+import java.util.List;
 
+import com.fstg.Agence.urbaine.bean.TypeProjet;
+
+public interface TypeProjetService {
+public List<TypeProjet> findAll();
 }

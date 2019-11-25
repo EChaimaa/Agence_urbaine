@@ -1,5 +1,9 @@
 package com.fstg.Agence.urbaine.service;
 
-public interface MembreCommissionService {
+import java.util.List;
 
+import com.fstg.Agence.urbaine.bean.MembreCommission;
+
+public interface MembreCommissionService {
+public List<MembreCommission> findAll();
 }

@@ -1,5 +1,9 @@
 package com.fstg.Agence.urbaine.service;
 
-public interface TypeCommissionService {
+import java.util.List;
 
+import com.fstg.Agence.urbaine.bean.TypeCommission;
+
+public interface TypeCommissionService {
+public List<TypeCommission> findall();
 }
