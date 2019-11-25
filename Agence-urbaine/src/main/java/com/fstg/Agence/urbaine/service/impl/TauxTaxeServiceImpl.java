@@ -14,6 +14,7 @@ import com.fstg.Agence.urbaine.service.TauxTaxeService;
 
 @Service
 public class TauxTaxeServiceImpl implements TauxTaxeService{
+	
 	@Autowired
 	TauxTaxeDao tauxTaxeDao;
 	
