@@ -6,5 +6,4 @@ import com.fstg.Agence.urbaine.bean.TypeDossier;
 
 public interface TypeDossierDao extends JpaRepository<TypeDossier,Long>{
 	public TypeDossier findByNom(String Nom);
-
 }
