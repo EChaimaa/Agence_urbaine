@@ -18,6 +18,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 @Entity
 public class Dossier {
 	@Id
@@ -191,10 +194,13 @@ public class Dossier {
 		this.commission = commission;
 	}
 
+	
+	@JsonIgnore
 	public List<Observation> getObservations() {
 		return observations;
 	}
 
+	@JsonSetter
 	public void setObservations(List<Observation> observations) {
 		this.observations = observations;
 	}
