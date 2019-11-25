@@ -11,13 +11,13 @@ import com.fstg.Agence.urbaine.service.TypeDossierService;
 public class TypeDossierServiceImpl implements TypeDossierService {
 
 	@Override
-	public List<TypeDossier> findall() {
+	public List<TypeDossier> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public TypeDossier findByNom(String Nom) {
+	public List<TypeDossier> findByNom(String Nom) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -6,5 +6,5 @@ import com.fstg.Agence.urbaine.bean.TypeProjet;
 
 public interface TypeProjetService {
 public List<TypeProjet> findAll();
-public TypeProjet findByLibelle(String libelle);
+public List<TypeProjet> findByLibelle(String libelle);
 }

@@ -17,7 +17,7 @@ public class TypeProjetServiceImpl implements TypeProjetService{
 	}
 
 	@Override
-	public TypeProjet findByLibelle(String libelle) {
+	public List<TypeProjet> findByLibelle(String libelle) {
 		// TODO Auto-generated method stub
 		return null;
 	}

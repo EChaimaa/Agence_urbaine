@@ -11,13 +11,13 @@ import com.fstg.Agence.urbaine.service.TypeCommissionService;
 public class TypeCommissionServiceImpl implements TypeCommissionService {
 
 	@Override
-	public List<TypeCommission> findall() {
+	public List<TypeCommission> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public TypeCommission findbylLibelle(String libelle) {
+	public List<TypeCommission> findbylLibelle(String libelle) {
 		// TODO Auto-generated method stub
 		return null;
 	}
