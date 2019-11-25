@@ -55,5 +55,11 @@ public class TauxTaxeServiceImpl implements TauxTaxeService{
 	public TauxTaxe findTaxe(Date daateDepart, Date dateFin, TypeDossier typeDossier, TypeProjet typeProjet) {
 		return null;
 	}
+
+	@Override
+	public List<TauxTaxe> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

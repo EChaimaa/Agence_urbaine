@@ -1,5 +1,9 @@
 package com.fstg.Agence.urbaine.service;
 
-public interface TypeDossierService {
+import java.util.List;
 
+import com.fstg.Agence.urbaine.bean.TypeDossier;
+
+public interface TypeDossierService {
+public List<TypeDossier> findall();
 }
