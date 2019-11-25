@@ -13,6 +13,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 @Entity
 public class Commission {
 
@@ -31,7 +34,15 @@ public class Commission {
     @OneToMany(mappedBy = "commission")
     private List<CommissionItem> commissionItems;
 
-    public Commission() {
+    public MembreCommission getChefCommission() {
+		return chefCommission;
+	}
+
+	public void setChefCommission(MembreCommission chefCommission) {
+		this.chefCommission = chefCommission;
+	}
+
+	public Commission() {
     }
 
     public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommission chefCommision,
@@ -62,11 +73,13 @@ public class Commission {
     public void setRef(String ref) {
         this.ref = ref;
     }
-
+    
+    @JsonIgnore
     public List<CommissionItem> getCommissionItems() {
         return commissionItems;
     }
 
+    @JsonSetter
     public void setCommissionItems(List<CommissionItem> commissionItems) {
         this.commissionItems = commissionItems;
     }
