@@ -6,4 +6,5 @@ import com.fstg.Agence.urbaine.bean.TypeDossier;
 
 public interface TypeDossierService {
 public List<TypeDossier> findall();
+public TypeDossier findByNom(String Nom);
 }

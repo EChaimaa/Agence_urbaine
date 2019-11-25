@@ -16,4 +16,10 @@ public class TypeDossierServiceImpl implements TypeDossierService {
 		return null;
 	}
 
+	@Override
+	public TypeDossier findByNom(String Nom) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
