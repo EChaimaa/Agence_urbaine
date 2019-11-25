@@ -14,6 +14,7 @@ import com.fstg.Agence.urbaine.service.TauxTaxeService;
 
 @Service
 public class TauxTaxeServiceImpl implements TauxTaxeService{
+	
 	@Autowired
 	TauxTaxeDao tauxTaxeDao;
 	
@@ -24,7 +25,9 @@ public class TauxTaxeServiceImpl implements TauxTaxeService{
 
 	@Override
 	public int exists(TauxTaxe tauxTaxe) {
-		// TODO Auto-generated method stub
+		if(tauxTaxeDao.existsById(tauxTaxe.getId())) {
+			return 1;
+		}
 		return 0;
 	}
 
@@ -39,20 +42,17 @@ public class TauxTaxeServiceImpl implements TauxTaxeService{
 	}
 
 	@Override
-	public List<TauxTaxe> findByDateDepartApplicationGreaterThan(Date date) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<TauxTaxe> findByDateDepartApplicationLowerThan(Date date) {
+		return tauxTaxeDao.findByDateDepartApplicationLowerThan(date);
 	}
 
 	@Override
-	public List<TauxTaxe> findByDateFintApplication(Date date) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<TauxTaxe> findByDateFintApplicationGreaterThan(Date date) {
+		return tauxTaxeDao.findByDateFintApplicationGreaterThan(date);
 	}
 
 	@Override
 	public TauxTaxe findTaxe(Date daateDepart, Date dateFin, TypeDossier typeDossier, TypeProjet typeProjet) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
