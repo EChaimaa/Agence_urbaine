@@ -43,7 +43,8 @@ public class TauxTaxeServiceImpl implements TauxTaxeService{
 
 	@Override
 	public List<TauxTaxe> findByDateDepartApplicationLowerThan(Date date) {
-		return tauxTaxeDao.findByDateDepartApplicationLowerThan(date);
+		//return tauxTaxeDao.findByDateDepartApplicationLowerThan(date);
+		return null;
 	}
 
 	@Override
