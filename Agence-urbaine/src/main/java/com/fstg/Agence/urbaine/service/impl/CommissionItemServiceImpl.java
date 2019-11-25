@@ -40,7 +40,6 @@ public class CommissionItemServiceImpl implements CommissionItemService {
 
 	@Override
 	public List<CommissionItem> findAll() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
