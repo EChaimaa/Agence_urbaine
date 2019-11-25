@@ -16,4 +16,10 @@ public class TypeProjetServiceImpl implements TypeProjetService{
 		return null;
 	}
 
+	@Override
+	public TypeProjet findByLibelle(String libelle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

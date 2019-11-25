@@ -16,4 +16,10 @@ public class TypeCommissionServiceImpl implements TypeCommissionService {
 		return null;
 	}
 
+	@Override
+	public TypeCommission findbylLibelle(String libelle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

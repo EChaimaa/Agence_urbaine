@@ -6,4 +6,5 @@ import com.fstg.Agence.urbaine.bean.TypeCommission;
 
 public interface TypeCommissionService {
 public List<TypeCommission> findall();
+public TypeCommission findbylLibelle(String libelle);
 }
