@@ -12,7 +12,7 @@ public interface TauxTaxeService {
 	public int exists(TauxTaxe tauxTaxe);
 	public List<TauxTaxe> findByTypeDossier(TypeDossier dossier);
 	public List<TauxTaxe> findByTypeProjet(TypeProjet projet);
-	public List<TauxTaxe> findByDateDepartApplicationGreaterThan(Date date);
-	public List<TauxTaxe> findByDateFintApplication(Date date);
+	public List<TauxTaxe> findByDateDepartApplicationLowerThan(Date date);
+	public List<TauxTaxe> findByDateFintApplicationGreaterThan(Date date);
 	public TauxTaxe findTaxe(Date daateDepart, Date dateFin, TypeDossier typeDossier, TypeProjet typeProjet);
 }
