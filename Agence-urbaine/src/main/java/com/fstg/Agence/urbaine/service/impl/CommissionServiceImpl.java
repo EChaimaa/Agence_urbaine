@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fstg.Agence.urbaine.bean.Commission;
+import com.fstg.Agence.urbaine.bean.MembreCommission;
 import com.fstg.Agence.urbaine.service.CommissionService;
 
 @Service
@@ -30,13 +31,19 @@ public class CommissionServiceImpl implements CommissionService {
 	}
 
 	@Override
-	public List<Commission> findByChefCommission(Date date) {
+	public List<Commission> findByChefCommission(MembreCommission chefCommission) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Commission> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Commission> findByDateCommission(Date dateDepart, Date dateFin) {
 		// TODO Auto-generated method stub
 		return null;
 	}

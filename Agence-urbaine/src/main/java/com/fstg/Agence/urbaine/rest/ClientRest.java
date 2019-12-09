@@ -17,7 +17,7 @@ import com.fstg.Agence.urbaine.service.ClientService;
 @RequestMapping("/urbaine-api/client")
 public class ClientRest {
 	@Autowired
-	ClientService clientService;
+	private ClientService clientService;
 	
 	public ClientService getClientService() {
 		return clientService;
