@@ -14,7 +14,7 @@ public interface CommissionDao extends JpaRepository<Commission, Long> {
    public Commission findByRef(String ref);
    public List<Commission> findByDateDepartCommission(Date date);
    public List<Commission> findByDateFinCommission(Date date);
-   public List<Commission> findByDateCommission(Date dateDepart, Date dateFin);
+   
    public List<Commission> findByChefCommission(MembreCommission chefCommission);
    //public List<Commission> findByDateFinCommissionGreaterThanAndDateDepartCommissionLowerThan(Date date1, Date date2);
    

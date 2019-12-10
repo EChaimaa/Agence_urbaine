@@ -32,11 +32,11 @@ public class CommissionRest {
 	public List<Commission> findAll() {
 		return commissionService.findAll();
 	}
-	@GetMapping("/date/{date}")
+	@GetMapping("/dateDepart/{date}")
 	public List<Commission> findByDateDepartCommission(@PathVariable Date date) {
 		return commissionService.findByDateDepartCommission(date);
 	}
-	@GetMapping("/date/{date}")
+	@GetMapping("/dateFin/{date}")
 	public List<Commission> findByDateFinCommission(@PathVariable Date date) {
 		return commissionService.findByDateFinCommission(date);
 	}
@@ -46,7 +46,7 @@ public class CommissionRest {
 		return commissionService.findByChefCommission(chefCommission);
 	}
 	
-	@GetMapping("/date/{dateDepart}{dateFin}")
+	@GetMapping("/dateDepart/{dateDepart}/dateFin/{dateFin}")
 	public List<Commission> findByDateCommission(@PathVariable Date dateDepart,Date dateFin) {
 		return commissionService.findByDateCommission(dateDepart, dateFin);
 	}
