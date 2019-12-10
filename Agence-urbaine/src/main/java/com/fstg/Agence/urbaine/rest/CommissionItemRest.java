@@ -17,7 +17,7 @@ import com.fstg.Agence.urbaine.service.CommissionItemService;
 @RestController
 @RequestMapping("/urbaine-api/CommissionItem")
 public class CommissionItemRest {
-	@	Autowired
+	@Autowired
 	private CommissionItemService commissionItemService;
 
 	public CommissionItemService getCommissionItemService() {
@@ -38,7 +38,7 @@ public class CommissionItemRest {
 		return  commissionItemService.findByMembreCommission(membrecommission);
 	}
 
-	@GetMapping("/commission/{commission} /Membre/{membreCommission}")
+	@GetMapping("/commission/{commission}/Membre/{membreCommission}")
 	public List<CommissionItem> findByCommissionAndMembreCommission(@PathVariable Commission commission,MembreCommission membreCommission) {
 		return  commissionItemService.findByCommissionAndMembreCommission(commission,membreCommission);
 	}
