@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,8 +42,8 @@ public class CommissionRest {
 		return commissionService.findByDateFinCommission(date);
 	}
 
-	@GetMapping("/chef/{chefCommission}")
-	public List<Commission> findByChefCommission(@PathVariable MembreCommission chefCommission) {
+	@GetMapping("/chef/")
+	public List<Commission> findByChefCommission(@RequestBody MembreCommission chefCommission) {
 		return commissionService.findByChefCommission(chefCommission);
 	}
 	
