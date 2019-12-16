@@ -5,18 +5,17 @@
  */
 package com.fstg.Agence.urbaine.dao;
 
-import com.fstg.Agence.urbaine.bean.Commission;
-import com.fstg.Agence.urbaine.bean.Dossier;
-import com.fstg.Agence.urbaine.bean.TypeDossier;
-import com.fstg.Agence.urbaine.bean.User;
-
-import ch.qos.logback.core.net.server.Client;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.fstg.Agence.urbaine.bean.Client;
+import com.fstg.Agence.urbaine.bean.Commission;
+import com.fstg.Agence.urbaine.bean.Dossier;
+import com.fstg.Agence.urbaine.bean.TypeDossier;
+import com.fstg.Agence.urbaine.bean.User;
 
 /**
  *

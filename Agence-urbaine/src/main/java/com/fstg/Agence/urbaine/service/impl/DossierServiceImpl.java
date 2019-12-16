@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fstg.Agence.urbaine.bean.Client;
 import com.fstg.Agence.urbaine.bean.Commission;
 import com.fstg.Agence.urbaine.bean.Dossier;
 import com.fstg.Agence.urbaine.bean.TypeDossier;
@@ -14,7 +15,7 @@ import com.fstg.Agence.urbaine.bean.User;
 import com.fstg.Agence.urbaine.dao.DossierDao;
 import com.fstg.Agence.urbaine.service.DossierService;
 
-import ch.qos.logback.core.net.server.Client;
+
 
 @Service
 public class DossierServiceImpl implements DossierService{
@@ -30,11 +31,6 @@ public class DossierServiceImpl implements DossierService{
 	@Override
 	public List<Dossier> findByDateArrive(Date date) {
 		return dd.findByDateArrive(date);
-	}
-
-	@Override
-	public List<Dossier> findByClient(Client client) {
-		return dd.findByClient(client);
 	}
 
 	@Override
@@ -75,6 +71,16 @@ public class DossierServiceImpl implements DossierService{
 	@Override
 	public List<Dossier> findBySuperficieGreaterThen(BigDecimal superficie) {
 		return dd.findBySuperficieGreaterThen(superficie);
+	}
+
+	@Override
+	public boolean exist(Long id) {
+		return dd.existsById(id);
+	}
+
+	@Override
+	public List<Dossier> findByClient(Client client) {
+		return dd.findByClient(client);
 	}
 
 }
