@@ -5,17 +5,17 @@
  */
 package com.fstg.Agence.urbaine.dao;
 
-import com.fstg.Agence.urbaine.bean.Commission;
-import com.fstg.Agence.urbaine.bean.Dossier;
-import com.fstg.Agence.urbaine.bean.TypeDossier;
-import com.fstg.Agence.urbaine.bean.User;
-
-import ch.qos.logback.core.net.server.Client;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.fstg.Agence.urbaine.bean.Client;
+import com.fstg.Agence.urbaine.bean.Commission;
+import com.fstg.Agence.urbaine.bean.Dossier;
+import com.fstg.Agence.urbaine.bean.TypeDossier;
+import com.fstg.Agence.urbaine.bean.User;
 
 /**
  *
@@ -28,6 +28,8 @@ public interface DossierDao extends JpaRepository<Dossier, Long> {
     List<Dossier> findByArchitect(User architect);
     List<Dossier> findByTechnicien(User technicien);
     List<Dossier> findByTypeDossier(TypeDossier typeDossier);
-    List<Dossier> findByAvis(int Avis);
+    List<Dossier> findByAvis(int avis);
     List<Dossier> findByCommission(Commission commission);
+    List<Dossier> findBySuperficieLowerThen(BigDecimal superficie);
+    List<Dossier> findBySuperficieGreaterThen(BigDecimal superficie);
 }

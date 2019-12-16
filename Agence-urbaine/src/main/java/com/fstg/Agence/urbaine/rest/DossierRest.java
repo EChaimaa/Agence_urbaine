@@ -9,14 +9,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fstg.Agence.urbaine.bean.Client;
 import com.fstg.Agence.urbaine.bean.Dossier;
+import com.fstg.Agence.urbaine.service.ClientService;
 import com.fstg.Agence.urbaine.service.DossierService;
 
 @RestController
-@RequestMapping("/urbaine-api/Dossier")
+@RequestMapping("/urbaine-api/dossier")
 public class DossierRest {
 	@Autowired
 	private DossierService dossierService;
+	
+	@Autowired
+	private ClientService cs;
+	
+
+	public ClientService getCs() {
+		return cs;
+	}
+
+	public void setCs(ClientService cs) {
+		this.cs = cs;
+	}
 
 	public DossierService getDossierService() {
 		return dossierService;
@@ -25,14 +39,28 @@ public class DossierRest {
 	public void setDossierService(DossierService dossierService) {
 		this.dossierService = dossierService;
 	}
+	
+	@GetMapping("/")
+	public List<Dossier> findAll(){
+		return dossierService.findAll();
+	}
 
-	@GetMapping("/ref/{Ref}")
-	public Dossier findByRef(@PathVariable String Ref) {
-		return dossierService.findByRef(Ref);
+	@GetMapping("/exist/{id}")
+	public boolean exists(Long id) {
+		return dossierService.exist(id);
+	}
+	
+	@GetMapping("/ref/{ref}")
+	public Dossier findByRef(@PathVariable String ref) {
+		return dossierService.findByRef(ref);
 	}
 
 	@GetMapping("/date{date}")
 	public List<Dossier> findByDateArrive(Date date) {
 		return dossierService.findByDateArrive(date);
+	}
+	
+	List<Dossier> findByClient(Client client){
+		return dossierService.findByClient(client);
 	}
 }

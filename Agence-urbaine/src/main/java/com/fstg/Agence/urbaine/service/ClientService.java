@@ -11,5 +11,6 @@ public interface ClientService {
 	public List<Client> findAll();
 	public Client findByNomAndPrenom(String nom, String prenom);
     public Client findByTel(Long tel);
+    public boolean exists(Long id);
     
 }

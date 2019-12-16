@@ -47,4 +47,9 @@ public class ClientServiceImpl implements ClientService{
 		return clientDao.findByRef(Ref);
 	}
 
+	@Override
+	public boolean exists(Long id) {
+		return clientDao.existsById(id);
+	}
+
 }
