@@ -25,16 +25,14 @@ public class DossierRest {
 	public void setDossierService(DossierService dossierService) {
 		this.dossierService = dossierService;
 	}
+
 	@GetMapping("/ref/{Ref}")
 	public Dossier findByRef(@PathVariable String Ref) {
 		return dossierService.findByRef(Ref);
 	}
+
 	@GetMapping("/date{date}")
 	public List<Dossier> findByDateArrive(Date date) {
 		return dossierService.findByDateArrive(date);
 	}
-//	@GetMapping("/Client{client}")
-//	public List<Dossier> findByClient(Client client) {
-//		return dossierService.findByClient(client);
-//	}
 }
