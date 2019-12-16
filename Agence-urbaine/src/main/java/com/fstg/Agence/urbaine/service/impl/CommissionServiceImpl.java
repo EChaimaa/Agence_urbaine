@@ -3,50 +3,61 @@ package com.fstg.Agence.urbaine.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fstg.Agence.urbaine.bean.Commission;
 import com.fstg.Agence.urbaine.bean.MembreCommission;
+import com.fstg.Agence.urbaine.dao.CommissionDao;
 import com.fstg.Agence.urbaine.service.CommissionService;
 
 @Service
 public class CommissionServiceImpl implements CommissionService {
 
+	@Autowired
+	CommissionDao cd;
+	
 	@Override
 	public Commission findByRef(String ref) {
-		// TODO Auto-generated method stub
-		return null;
+		return cd.findByRef(ref);
 	}
 
 	@Override
 	public List<Commission> findByDateDepartCommission(Date date) {
-		// TODO Auto-generated method stub
-		return null;
+		return cd.findByDateDepartCommission(date);
 	}
 
 	@Override
 	public List<Commission> findByDateFinCommission(Date date) {
-		// TODO Auto-generated method stub
-		return null;
+		return cd.findByDateFinCommission(date);
 	}
 
 	@Override
 	public List<Commission> findByChefCommission(MembreCommission chefCommission) {
-		// TODO Auto-generated method stub
-		return null;
+		return cd.findByChefCommission(chefCommission);
 	}
 
 	@Override
 	public List<Commission> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return cd.findAll();
 	}
 
 	@Override
-	public List<Commission> findByDateCommission(Date dateDepart, Date dateFin) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Commission> findCommissionGoingOn(Date date) {
+		return cd.findCommissionGoingOn(date);
 	}
+
+	@Override
+	public List<Commission> findByDateDepartCommissionAfter(Date date) {
+		return cd.findByDateDepartCommissionAfter(date);
+	}
+
+	@Override
+	public List<Commission> findByDateFinCommissionBefore(Date date) {
+		return cd.findByDateFinCommissionBefore(date);
+	}
+
+	
 	
 
 }

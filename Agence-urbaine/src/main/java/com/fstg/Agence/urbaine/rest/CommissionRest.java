@@ -47,10 +47,13 @@ public class CommissionRest {
 		return commissionService.findByChefCommission(chefCommission);
 	}
 	
-	@GetMapping("/dateDepart/{dateDepart}/dateFin/{dateFin}")
-	public List<Commission> findByDateCommission(@PathVariable Date dateDepart,Date dateFin) {
-		return commissionService.findByDateCommission(dateDepart, dateFin);
+	@GetMapping("/dateSup/{date}")
+	public List<Commission> findByDateFinCommissionBefore(@PathVariable Date date) {
+		return commissionService.findByDateFinCommissionBefore(date);
 	}
-
-
+	
+	@GetMapping("/dateInf/{date}")
+	public List<Commission> findByDateFinCommissionAfter(@PathVariable Date date) {
+		return commissionService.findByDateDepartCommissionAfter(date);
+	}
 }

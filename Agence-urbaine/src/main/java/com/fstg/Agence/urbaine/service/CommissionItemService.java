@@ -12,8 +12,7 @@ public interface CommissionItemService {
 
 	public List<CommissionItem> findByMembreCommission(MembreCommission membreCommission);
 
-	public List<CommissionItem> findByCommissionAndMembreCommission(Commission commission,
-			MembreCommission membreCommission);
+	public List<CommissionItem> findByCommissionAndMembreCommission(Commission commission,MembreCommission membreCommission);
 
 	public List<CommissionItem> findByDateAffectation(Date date);
 	
