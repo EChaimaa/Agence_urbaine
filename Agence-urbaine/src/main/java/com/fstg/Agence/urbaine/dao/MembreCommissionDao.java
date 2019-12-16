@@ -6,6 +6,6 @@ import com.fstg.Agence.urbaine.bean.MembreCommission;
 
 public interface MembreCommissionDao extends JpaRepository<MembreCommission, Long>{
 	public MembreCommission findByNomAndPrenom(String nom,String prenom);
-	
+	public MembreCommission findByRef(String ref);
 
 }

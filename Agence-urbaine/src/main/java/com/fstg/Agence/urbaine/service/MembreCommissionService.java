@@ -5,5 +5,6 @@ import java.util.List;
 import com.fstg.Agence.urbaine.bean.MembreCommission;
 
 public interface MembreCommissionService {
-public List<MembreCommission> findAll();
+	public List<MembreCommission> findAll();
+	public MembreCommission findByRef(String ref);
 }

@@ -16,4 +16,10 @@ public class MembreCommissionServiceImpl implements MembreCommissionService{
 		return null;
 	}
 
+	@Override
+	public MembreCommission findByRef(String ref) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
