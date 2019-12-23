@@ -9,8 +9,10 @@ import com.fstg.Agence.urbaine.bean.Role;
 import com.fstg.Agence.urbaine.bean.User;
 
 @Repository
-public interface userDao extends JpaRepository<User, Long> {
+public interface UserDao extends JpaRepository<User, Long> {
 	public List<User> findByLogin(String login);
 	public List<User> findByEmail(String email);
 	public List<User> findByRole(Role role);
+	public List<User> findByBlocked(boolean blocked);
+	public User findByNomAndPrenom(String Nom,String Prenom);
 }
