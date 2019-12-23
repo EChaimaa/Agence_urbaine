@@ -39,7 +39,6 @@ public class Commission {
     private List<Observation> observations; 
     @ManyToOne
     private int avis;
-    private boolean traitement;
     
     public MembreCommission getChefCommission() {
 		return chefCommission;
@@ -68,15 +67,6 @@ public class Commission {
 	public void setAvis(int avis) {
 		this.avis = avis;
 	}
-
-	public boolean isTraitement() {
-		return traitement;
-	}
-
-	public void setTraitement(boolean traitement) {
-		this.traitement = traitement;
-	}
-
 	public void setChefCommission(MembreCommission chefCommission) {
 		this.chefCommission = chefCommission;
 	}
