@@ -50,10 +50,6 @@ public class DossierServiceImpl implements DossierService {
 		return dd.findByTypeDossier(typeDossier);
 	}
 
-	@Override
-	public List<Dossier> findByAvis(int avis) {
-		return dd.findByAvis(avis);
-	}
 
 	@Override
 	public List<Dossier> findByCommission(Commission commission) {

@@ -25,7 +25,6 @@ public interface DossierDao extends JpaRepository<Dossier, Long> {
     List<Dossier> findByArchitect(User architect);
     List<Dossier> findByTechnicien(User technicien);
     List<Dossier> findByTypeDossier(TypeDossier typeDossier);
-    List<Dossier> findByAvis(int avis);
     List<Dossier> findByCommission(Commission commission);
 //    List<Dossier> findBySuperficieLowerThan(BigDecimal superficie);
 //    List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
