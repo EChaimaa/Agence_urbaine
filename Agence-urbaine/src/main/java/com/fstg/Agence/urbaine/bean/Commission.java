@@ -35,7 +35,8 @@ public class Commission {
 	private List<CommissionItem> commissionItems;
 	@ManyToOne
 	private TypeProjet projet;
-	@OneToMany(mappedBy = "commission")
+	
+	@OneToMany
 	private List<Observation> observations;
 	private int avis;
 
