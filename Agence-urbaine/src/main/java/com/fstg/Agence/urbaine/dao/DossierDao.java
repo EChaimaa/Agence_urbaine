@@ -17,10 +17,7 @@ import com.fstg.Agence.urbaine.bean.Dossier;
 import com.fstg.Agence.urbaine.bean.TypeDossier;
 import com.fstg.Agence.urbaine.bean.User;
 
-/**
- *
- * @author Chaimaa
- */
+
 public interface DossierDao extends JpaRepository<Dossier, Long> {
     public Dossier findByRef(String ref);
     List<Dossier> findByDateArrive(Date date);
@@ -30,6 +27,6 @@ public interface DossierDao extends JpaRepository<Dossier, Long> {
     List<Dossier> findByTypeDossier(TypeDossier typeDossier);
     List<Dossier> findByAvis(int avis);
     List<Dossier> findByCommission(Commission commission);
-    List<Dossier> findBySuperficieLowerThen(BigDecimal superficie);
-    List<Dossier> findBySuperficieGreaterThen(BigDecimal superficie);
+//    List<Dossier> findBySuperficieLowerThan(BigDecimal superficie);
+//    List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
 }

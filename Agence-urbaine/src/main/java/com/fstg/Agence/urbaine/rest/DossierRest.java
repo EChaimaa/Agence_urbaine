@@ -6,10 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fstg.Agence.urbaine.bean.Client;
 import com.fstg.Agence.urbaine.bean.Dossier;
 import com.fstg.Agence.urbaine.service.ClientService;
 import com.fstg.Agence.urbaine.service.DossierService;
@@ -46,7 +47,7 @@ public class DossierRest {
 	}
 
 	@GetMapping("/exist/{id}")
-	public boolean exists(Long id) {
+	public boolean exists(@PathVariable Long id) {
 		return dossierService.exist(id);
 	}
 	
@@ -56,11 +57,17 @@ public class DossierRest {
 	}
 
 	@GetMapping("/date{date}")
-	public List<Dossier> findByDateArrive(Date date) {
+	public List<Dossier> findByDateArrive(@PathVariable Date date) {
 		return dossierService.findByDateArrive(date);
 	}
 	
-	List<Dossier> findByClient(Client client){
-		return dossierService.findByClient(client);
+	@GetMapping("/client/{ref}")
+	public List<Dossier> findByClient(@PathVariable String ref){
+		return dossierService.findByClient(ref);
+	}
+	
+	@PutMapping("/")
+	public void save(@RequestBody Dossier dossier) {
+		dossierService.save(dossier);
 	}
 }

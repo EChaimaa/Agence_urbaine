@@ -13,16 +13,18 @@ import com.fstg.Agence.urbaine.bean.Dossier;
 import com.fstg.Agence.urbaine.bean.TypeDossier;
 import com.fstg.Agence.urbaine.bean.User;
 import com.fstg.Agence.urbaine.dao.DossierDao;
+import com.fstg.Agence.urbaine.service.ClientService;
 import com.fstg.Agence.urbaine.service.DossierService;
 
-
-
 @Service
-public class DossierServiceImpl implements DossierService{
+public class DossierServiceImpl implements DossierService {
 
 	@Autowired
 	DossierDao dd;
-	
+
+	@Autowired
+	ClientService clientService;
+
 	@Override
 	public Dossier findByRef(String ref) {
 		return dd.findByRef(ref);
@@ -63,15 +65,15 @@ public class DossierServiceImpl implements DossierService{
 		return dd.findAll();
 	}
 
-	@Override
-	public List<Dossier> findBySuperficieLowerThen(BigDecimal superficie) {
-		return dd.findBySuperficieLowerThen(superficie);
-	}
-
-	@Override
-	public List<Dossier> findBySuperficieGreaterThen(BigDecimal superficie) {
-		return dd.findBySuperficieGreaterThen(superficie);
-	}
+//	@Override
+//	public List<Dossier> findBySuperficieLowerThan(BigDecimal superficie) {
+//		return dd.findBySuperficieLowerThan(superficie);
+//	}
+//
+//	@Override
+//	public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie) {
+//		return dd.findBySuperficieGreaterThan(superficie);
+//	}
 
 	@Override
 	public boolean exist(Long id) {
@@ -79,8 +81,18 @@ public class DossierServiceImpl implements DossierService{
 	}
 
 	@Override
-	public List<Dossier> findByClient(Client client) {
+	public List<Dossier> findByClient(String ref) {
+
+		Client client = clientService.findByRef(ref);
+		if (client == null) {
+			return null;
+		}
 		return dd.findByClient(client);
+	}
+
+	@Override
+	public void save(Dossier dossier) {
+		dd.save(dossier);
 	}
 
 }
