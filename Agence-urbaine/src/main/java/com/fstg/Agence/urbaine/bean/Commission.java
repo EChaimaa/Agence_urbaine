@@ -19,28 +19,27 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 @Entity
 public class Commission {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String ref;
-    @Temporal(TemporalType.DATE)
-    private Date dateDepartCommission;
-    @Temporal(TemporalType.DATE)
-    private Date dateFinCommission;
-    @ManyToOne
-    private TypeCommission typeCommission;
-    @ManyToOne
-    private MembreCommission chefCommission;
-    @OneToMany(mappedBy = "commission")
-    private List<CommissionItem> commissionItems;
-    @ManyToOne
-    private TypeProjet projet;
-    @OneToMany(mappedBy = "commission")
-    private List<Observation> observations; 
-    @ManyToOne
-    private int avis;
-    
-    public MembreCommission getChefCommission() {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String ref;
+	@Temporal(TemporalType.DATE)
+	private Date dateDepartCommission;
+	@Temporal(TemporalType.DATE)
+	private Date dateFinCommission;
+	@ManyToOne
+	private TypeCommission typeCommission;
+	@ManyToOne
+	private MembreCommission chefCommission;
+	@OneToMany(mappedBy = "commission")
+	private List<CommissionItem> commissionItems;
+	@ManyToOne
+	private TypeProjet projet;
+	@OneToMany(mappedBy = "commission")
+	private List<Observation> observations;
+	private int avis;
+
+	public MembreCommission getChefCommission() {
 		return chefCommission;
 	}
 
@@ -67,71 +66,72 @@ public class Commission {
 	public void setAvis(int avis) {
 		this.avis = avis;
 	}
+
 	public void setChefCommission(MembreCommission chefCommission) {
 		this.chefCommission = chefCommission;
 	}
 
 	public Commission() {
-    }
+	}
 
-    public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommission chefCommision,
-            List<CommissionItem> commissionItems) {
-        this.id = id;
-        this.dateDepartCommission = dateDepartCommission;
-        this.dateFinCommission = dateFinCommission;
-        this.chefCommission = chefCommision;
-        this.commissionItems = commissionItems;
-    }
+	public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommission chefCommision,
+			List<CommissionItem> commissionItems) {
+		this.id = id;
+		this.dateDepartCommission = dateDepartCommission;
+		this.dateFinCommission = dateFinCommission;
+		this.chefCommission = chefCommision;
+		this.commissionItems = commissionItems;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Date getDateDepartCommission() {
-        return dateDepartCommission;
-    }
+	public Date getDateDepartCommission() {
+		return dateDepartCommission;
+	}
 
-    public String getRef() {
-        return ref;
-    }
+	public String getRef() {
+		return ref;
+	}
 
-    public void setRef(String ref) {
-        this.ref = ref;
-    }
-    
-    @JsonIgnore
-    public List<CommissionItem> getCommissionItems() {
-        return commissionItems;
-    }
+	public void setRef(String ref) {
+		this.ref = ref;
+	}
 
-    @JsonSetter
-    public void setCommissionItems(List<CommissionItem> commissionItems) {
-        this.commissionItems = commissionItems;
-    }
+	@JsonIgnore
+	public List<CommissionItem> getCommissionItems() {
+		return commissionItems;
+	}
 
-    public void setDateDepartCommission(Date dateDepartCommission) {
-        this.dateDepartCommission = dateDepartCommission;
-    }
+	@JsonSetter
+	public void setCommissionItems(List<CommissionItem> commissionItems) {
+		this.commissionItems = commissionItems;
+	}
 
-    public Date getDateFinCommission() {
-        return dateFinCommission;
-    }
+	public void setDateDepartCommission(Date dateDepartCommission) {
+		this.dateDepartCommission = dateDepartCommission;
+	}
 
-    public void setDateFinCommission(Date dateFinCommission) {
-        this.dateFinCommission = dateFinCommission;
-    }
+	public Date getDateFinCommission() {
+		return dateFinCommission;
+	}
 
-    public MembreCommission getChefCommision() {
-        return chefCommission;
-    }
+	public void setDateFinCommission(Date dateFinCommission) {
+		this.dateFinCommission = dateFinCommission;
+	}
 
-    public void setChefCommision(MembreCommission chefCommision) {
-        this.chefCommission = chefCommision;
-    }
+	public MembreCommission getChefCommision() {
+		return chefCommission;
+	}
+
+	public void setChefCommision(MembreCommission chefCommision) {
+		this.chefCommission = chefCommision;
+	}
 
 	public TypeCommission getTypeCommission() {
 		return typeCommission;
@@ -147,7 +147,5 @@ public class Commission {
 				+ ", dateFinCommission=" + dateFinCommission + ", typeCommission=" + typeCommission
 				+ ", chefCommission=" + chefCommission + ", projet=" + projet + ", avis=" + avis + "]";
 	}
-	
-	
 
 }
