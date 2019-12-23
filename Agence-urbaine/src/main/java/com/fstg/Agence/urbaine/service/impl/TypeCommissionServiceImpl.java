@@ -19,7 +19,7 @@ TypeCommissionDao tcd;
 	}
 
 	@Override
-	public List<TypeCommission> findbylLibelle(String libelle) {
+	public List<TypeCommission> findbyLibelle(String libelle) {
 		return tcd.findByLibelle(libelle);
 	}
 

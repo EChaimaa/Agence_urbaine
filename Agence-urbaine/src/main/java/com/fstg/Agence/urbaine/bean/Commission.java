@@ -33,9 +33,48 @@ public class Commission {
     private MembreCommission chefCommission;
     @OneToMany(mappedBy = "commission")
     private List<CommissionItem> commissionItems;
-
+    @ManyToOne
+    private TypeProjet projet;
+    @OneToMany(mappedBy = "commission")
+    private List<Observation> observations; 
+    @ManyToOne
+    private int avis;
+    private boolean traitement;
+    
     public MembreCommission getChefCommission() {
 		return chefCommission;
+	}
+
+	public TypeProjet getProjet() {
+		return projet;
+	}
+
+	public void setProjet(TypeProjet projet) {
+		this.projet = projet;
+	}
+
+	public List<Observation> getObservations() {
+		return observations;
+	}
+
+	public void setObservations(List<Observation> observations) {
+		this.observations = observations;
+	}
+
+	public int getAvis() {
+		return avis;
+	}
+
+	public void setAvis(int avis) {
+		this.avis = avis;
+	}
+
+	public boolean isTraitement() {
+		return traitement;
+	}
+
+	public void setTraitement(boolean traitement) {
+		this.traitement = traitement;
 	}
 
 	public void setChefCommission(MembreCommission chefCommission) {
@@ -116,7 +155,7 @@ public class Commission {
 	public String toString() {
 		return "Commission [id=" + id + ", ref=" + ref + ", dateDepartCommission=" + dateDepartCommission
 				+ ", dateFinCommission=" + dateFinCommission + ", typeCommission=" + typeCommission
-				+ ", chefCommission=" + chefCommission + ", commissionItems=" + commissionItems + "]";
+				+ ", chefCommission=" + chefCommission + ", projet=" + projet + ", avis=" + avis + "]";
 	}
 	
 	

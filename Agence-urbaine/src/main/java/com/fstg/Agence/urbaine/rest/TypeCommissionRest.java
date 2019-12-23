@@ -26,7 +26,7 @@ public class TypeCommissionRest {
 	}
 	@GetMapping("/Libelle/{Libelle}")
 	public List<TypeCommission> findByLibelle(@PathVariable String Libelle) {
-		return typeCommissionService.findbylLibelle(Libelle);
+		return typeCommissionService.findbyLibelle(Libelle);
 	}
 	
 }
