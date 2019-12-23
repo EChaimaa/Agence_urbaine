@@ -41,7 +41,7 @@ public class Dossier {
 	private BigDecimal montantPaye;
 	@Temporal(TemporalType.DATE)
 	private Date datePaiement;
-	private int avis;
+
 	@ManyToOne
 	private TypeDossier typeDossier;
 	@ManyToOne
@@ -68,7 +68,6 @@ public class Dossier {
 		this.technicien = technicien;
 		this.montantPaye = montantPaye;
 		this.datePaiement = datePaiement;
-		this.avis = avis;
 		this.typeDossier = typeDossier;
 		this.typeProjet = typeProjet;
 		this.commission = commission;
@@ -162,13 +161,6 @@ public class Dossier {
 		this.datePaiement = datePaiement;
 	}
 
-	public int getAvis() {
-		return avis;
-	}
-
-	public void setAvis(int avis) {
-		this.avis = avis;
-	}
 
 	public TypeDossier getTypeDossier() {
 		return typeDossier;
@@ -210,7 +202,7 @@ public class Dossier {
 		return "Dossier [id=" + id + ", reference=" + ref + ", dateArrive=" + dateArrive + ", lieuProjet="
 				+ lieuProjet + ", descriptionProjet=" + descriptionProjet + ", architect=" + architect + ", client="
 				+ client + ", superficie=" + superficie + ", technicien=" + technicien + ", montantPaye=" + montantPaye
-				+ ", datePaiement=" + datePaiement + ", avis=" + avis + ", typeDossier=" + typeDossier + ", typeProjet="
+				+ ", datePaiement=" + datePaiement + ", typeDossier=" + typeDossier + ", typeProjet="
 				+ typeProjet + ", commission=" + commission + ", observations=" + observations + "]";
 	}
 
