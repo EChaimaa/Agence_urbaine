@@ -5,7 +5,6 @@
  */
 package com.fstg.Agence.urbaine.dao;
 
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -26,6 +25,4 @@ public interface DossierDao extends JpaRepository<Dossier, Long> {
     List<Dossier> findByTechnicien(User technicien);
     List<Dossier> findByTypeDossier(TypeDossier typeDossier);
     List<Dossier> findByCommission(Commission commission);
-//    List<Dossier> findBySuperficieLowerThan(BigDecimal superficie);
-//    List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
 }
