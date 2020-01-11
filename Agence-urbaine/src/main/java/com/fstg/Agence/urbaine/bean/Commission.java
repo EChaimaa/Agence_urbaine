@@ -38,7 +38,7 @@ public class Commission {
 	
 	@OneToMany
 	private List<Observation> observations;
-	private int avis;
+	
 
 	public MembreCommission getChefCommission() {
 		return chefCommission;
@@ -58,14 +58,6 @@ public class Commission {
 
 	public void setObservations(List<Observation> observations) {
 		this.observations = observations;
-	}
-
-	public int getAvis() {
-		return avis;
-	}
-
-	public void setAvis(int avis) {
-		this.avis = avis;
 	}
 
 	public void setChefCommission(MembreCommission chefCommission) {
@@ -146,7 +138,7 @@ public class Commission {
 	public String toString() {
 		return "Commission [id=" + id + ", ref=" + ref + ", dateDepartCommission=" + dateDepartCommission
 				+ ", dateFinCommission=" + dateFinCommission + ", typeCommission=" + typeCommission
-				+ ", chefCommission=" + chefCommission + ", projet=" + projet + ", avis=" + avis + "]";
+				+ ", chefCommission=" + chefCommission + ", projet=" + projet + "]";
 	}
 
 }

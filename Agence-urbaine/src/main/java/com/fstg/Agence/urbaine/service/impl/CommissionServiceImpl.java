@@ -7,15 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fstg.Agence.urbaine.bean.Commission;
+import com.fstg.Agence.urbaine.bean.CommissionItem;
 import com.fstg.Agence.urbaine.bean.MembreCommission;
 import com.fstg.Agence.urbaine.dao.CommissionDao;
 import com.fstg.Agence.urbaine.service.CommissionService;
+import com.fstg.Agence.urbaine.service.DossierService;
 
 @Service
 public class CommissionServiceImpl implements CommissionService {
 
 	@Autowired
 	CommissionDao cd;
+	
+	@Autowired
+	DossierService ds;
 	
 	@Override
 	public Commission findByRef(String ref) {
@@ -62,6 +67,19 @@ public class CommissionServiceImpl implements CommissionService {
 		cd.save(commission);
 	}
 
+	@Override
+	public void setAvisDossier(Commission commission) {
+		int count = 0;
+		for (CommissionItem commissionItem : commission.getCommissionItems()) {
+			count += commissionItem.getVote();
+		}
+		
+		
+		//ds.setAvis(ds.findByCommission(commission), count);
+		
+	}
+
+	
 	
 	
 

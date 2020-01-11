@@ -22,6 +22,8 @@ public class CommissionItem {
 	private Commission commission;
 	@Temporal(TemporalType.DATE)
 	private Date dateAffectation;
+	
+	private int vote;
 
 	public CommissionItem() {
 	}
@@ -65,10 +67,19 @@ public class CommissionItem {
 		this.dateAffectation = dateAffectation;
 	}
 
+	public int getVote() {
+		return vote;
+	}
+
+	public void setVote(int vote) {
+		this.vote = vote;
+	}
+
 	@Override
 	public String toString() {
-		return "CommisionItem [membreCommission=" + membreCommission + ", commission=" + commission + ", dateAffectation="
-				+ dateAffectation + "]";
+		return "CommissionItem [id=" + id + ", membreCommission=" + membreCommission + ", commission=" + commission
+				+ ", dateAffectation=" + dateAffectation + ", vote=" + vote + "]";
 	}
+	
 
 }
