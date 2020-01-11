@@ -37,9 +37,7 @@ public class Commission {
 	@OneToMany
 	private List<Observation> observations;
 
-	public MembreCommission getChefCommission() {
-		return chefCommission;
-	}
+	
 
 	public Commission() {
 	}
