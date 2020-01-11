@@ -15,14 +15,14 @@ public class TypeDossier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nom;
+	private String libelle;
 
 	public TypeDossier() {
 	}
 
 	public TypeDossier(Long id, String nom) {
 		this.id = id;
-		this.nom = nom;
+		this.libelle = nom;
 	}
 
 	public Long getId() {
@@ -33,17 +33,17 @@ public class TypeDossier {
 		this.id = id;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getLibelle() {
+		return libelle;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
 	}
 
 	@Override
 	public String toString() {
-		return "TypeDossier [id=" + id + ", nom=" + nom + "]";
+		return "TypeDossier [id=" + id + ", libellé=" + libelle + "]";
 	}
 
 }

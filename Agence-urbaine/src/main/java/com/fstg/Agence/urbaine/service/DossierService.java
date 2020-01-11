@@ -20,8 +20,8 @@ public interface DossierService {
 	public List<Dossier> findByArchitect(User architect);
 	public List<Dossier> findByTechnicien(User technicien);
 	public List<Dossier> findByTypeDossier(TypeDossier typeDossier);
-	public List<Dossier> findByCommission(Commission commission);
+	public Dossier findByCommission(Commission commission);
 	public List<Dossier> findBySuperficieLessThan(BigDecimal superficie);
 	public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
-	public int setAvis(String ref, boolean avis);
+	public int setAvis(String ref, int avis);
 }

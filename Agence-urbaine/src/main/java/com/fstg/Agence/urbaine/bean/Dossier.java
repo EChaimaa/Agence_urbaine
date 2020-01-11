@@ -31,7 +31,7 @@ public class Dossier {
 	private Date dateArrive;
 	private String lieuProjet;
 	private String descriptionProjet;
-	private boolean avis;
+	private int avis;
 	@ManyToOne
 	private User architect;
 	@ManyToOne
@@ -72,7 +72,7 @@ public class Dossier {
 		this.typeDossier = typeDossier;
 		this.typeProjet = typeProjet;
 		this.commission = commission;
-		this.avis = false;
+		this.avis = 0;
 	}
 
 	public Long getId() {
@@ -199,11 +199,13 @@ public class Dossier {
 		this.observations = observations;
 	}
 
-	public boolean isAvis() {
+	
+
+	public int getAvis() {
 		return avis;
 	}
 
-	public void setAvis(boolean avis) {
+	public void setAvis(int avis) {
 		this.avis = avis;
 	}
 

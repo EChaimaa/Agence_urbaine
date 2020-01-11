@@ -52,7 +52,7 @@ public class DossierServiceImpl implements DossierService {
 
 
 	@Override
-	public List<Dossier> findByCommission(Commission commission) {
+	public Dossier findByCommission(Commission commission) {
 		return dd.findByCommission(commission);
 	}
 
@@ -94,7 +94,7 @@ public class DossierServiceImpl implements DossierService {
 	}
 
 	@Override
-	public int setAvis(String ref, boolean avis) {
+	public int setAvis(String ref, int avis) {
 		if(! dd.existsByRef(ref)) {
 			return -1;
 		}
