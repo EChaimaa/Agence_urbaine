@@ -57,6 +57,11 @@ public class CommissionServiceImpl implements CommissionService {
 		return cd.findByDateFinCommissionBefore(date);
 	}
 
+	@Override
+	public void save(Commission commission) {
+		cd.save(commission);
+	}
+
 	
 	
 

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,13 +19,8 @@ import com.fstg.Agence.urbaine.service.CommissionService;
 @RequestMapping("/urbaine-api/commission")
 public class CommissionRest {
 	@Autowired
-	private CommissionService commissionService;
-	public CommissionService getCommissionService() {
-		return commissionService;
-	}
-	public void setCommissionService(CommissionService commissionService) {
-		this.commissionService = commissionService;
-	}
+	CommissionService commissionService;
+	
 	@GetMapping("/ref/{Ref}")
 	public Commission findByRef(@PathVariable String Ref) {
 		return commissionService.findByRef(Ref);
@@ -55,5 +51,9 @@ public class CommissionRest {
 	@GetMapping("/dateInf/{date}")
 	public List<Commission> findByDateFinCommissionAfter(@PathVariable Date date) {
 		return commissionService.findByDateDepartCommissionAfter(date);
+	}
+	@PostMapping("/save")
+	public void save(@RequestBody Commission commission) {
+		commissionService.save(commission);
 	}
 }
