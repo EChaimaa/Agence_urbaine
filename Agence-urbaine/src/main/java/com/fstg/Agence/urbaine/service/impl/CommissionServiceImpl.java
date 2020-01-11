@@ -74,7 +74,6 @@ public class CommissionServiceImpl implements CommissionService {
 			count += commissionItem.getVote();
 		}
 		
-		
 		return ds.setAvis(ds.findByCommission(commission).getRef(), count);
 		
 	}
