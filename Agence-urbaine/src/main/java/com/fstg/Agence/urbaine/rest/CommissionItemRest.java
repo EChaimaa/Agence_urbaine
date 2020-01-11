@@ -19,7 +19,7 @@ import com.fstg.Agence.urbaine.service.CommissionService;
 import com.fstg.Agence.urbaine.service.MembreCommissionService;
 
 @RestController
-@RequestMapping("/urbaine-api/CommissionItem")
+@RequestMapping("/urbaine-api/commissionItem")
 public class CommissionItemRest {
 
 	@Autowired
