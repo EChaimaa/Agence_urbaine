@@ -68,14 +68,14 @@ public class CommissionServiceImpl implements CommissionService {
 	}
 
 	@Override
-	public void setAvisDossier(Commission commission) {
+	public int setAvisDossier(Commission commission) {
 		int count = 0;
 		for (CommissionItem commissionItem : commission.getCommissionItems()) {
 			count += commissionItem.getVote();
 		}
 		
 		
-		//ds.setAvis(ds.findByCommission(commission), count);
+		return ds.setAvis(ds.findByCommission(commission).getRef(), count);
 		
 	}
 
