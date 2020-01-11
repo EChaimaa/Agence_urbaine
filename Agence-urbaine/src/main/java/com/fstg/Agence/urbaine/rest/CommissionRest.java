@@ -53,7 +53,7 @@ public class CommissionRest {
 	public List<Commission> findByDateFinCommissionAfter(@PathVariable Date date) {
 		return commissionService.findByDateDepartCommissionAfter(date);
 	}
-	@PostMapping("/save")
+	@PostMapping("/")
 	public void save(@RequestBody Commission commission) {
 		commissionService.save(commission);
 	}
