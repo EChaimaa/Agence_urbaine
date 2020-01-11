@@ -1,5 +1,6 @@
 package com.fstg.Agence.urbaine.service.impl;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -80,6 +81,26 @@ public class DossierServiceImpl implements DossierService {
 	@Override
 	public void save(Dossier dossier) {
 		dd.save(dossier);
+	}
+
+	@Override
+	public List<Dossier> findBySuperficieLessThan(BigDecimal superficie) {
+		return dd.findBySuperficieLessThan(superficie);
+	}
+
+	@Override
+	public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie) {
+		return dd.findBySuperficieGreaterThan(superficie);
+	}
+
+	@Override
+	public int setAvis(String ref, boolean avis) {
+		if(! dd.existsByRef(ref)) {
+			return -1;
+		}
+		Dossier dossier = dd.findByRef(ref);
+		dossier.setAvis(avis);
+		return 1;
 	}
 
 }

@@ -31,6 +31,7 @@ public class Dossier {
 	private Date dateArrive;
 	private String lieuProjet;
 	private String descriptionProjet;
+	private boolean avis;
 	@ManyToOne
 	private User architect;
 	@ManyToOne
@@ -56,7 +57,7 @@ public class Dossier {
 
 	public Dossier(Long id, String reference, Date dateArrive, String lieuProjet, String descriptionProjet,
 			User architect, Client client, BigDecimal superficie, User technicien, BigDecimal montantPaye,
-			Date datePaiement, int avis, TypeDossier typeDossier, TypeProjet typeProjet, Commission commission) {
+			Date datePaiement, TypeDossier typeDossier, TypeProjet typeProjet, Commission commission) {
 		this.id = id;
 		this.ref = reference;
 		this.dateArrive = dateArrive;
@@ -71,6 +72,7 @@ public class Dossier {
 		this.typeDossier = typeDossier;
 		this.typeProjet = typeProjet;
 		this.commission = commission;
+		this.avis = false;
 	}
 
 	public Long getId() {
@@ -197,13 +199,24 @@ public class Dossier {
 		this.observations = observations;
 	}
 
+	public boolean isAvis() {
+		return avis;
+	}
+
+	public void setAvis(boolean avis) {
+		this.avis = avis;
+	}
+
 	@Override
 	public String toString() {
-		return "Dossier [id=" + id + ", reference=" + ref + ", dateArrive=" + dateArrive + ", lieuProjet="
-				+ lieuProjet + ", descriptionProjet=" + descriptionProjet + ", architect=" + architect + ", client="
-				+ client + ", superficie=" + superficie + ", technicien=" + technicien + ", montantPaye=" + montantPaye
-				+ ", datePaiement=" + datePaiement + ", typeDossier=" + typeDossier + ", typeProjet="
-				+ typeProjet + ", commission=" + commission + ", observations=" + observations + "]";
+		return "Dossier [id=" + id + ", ref=" + ref + ", dateArrive=" + dateArrive + ", lieuProjet=" + lieuProjet
+				+ ", descriptionProjet=" + descriptionProjet + ", avis=" + avis + ", architect=" + architect
+				+ ", client=" + client + ", superficie=" + superficie + ", technicien=" + technicien + ", montantPaye="
+				+ montantPaye + ", datePaiement=" + datePaiement + ", typeDossier=" + typeDossier + ", typeProjet="
+				+ typeProjet + ", commission=" + commission + "]";
 	}
+
+	
+	
 
 }

@@ -14,13 +14,14 @@ public interface DossierService {
 	public List<Dossier> findAll();
 	public Dossier findByRef(String ref);
 	public boolean exist(Long id);
-	List<Dossier> findByDateArrive(Date date);
-	List<Dossier> findByClient(String ref);
-	List<Dossier> findByArchitect(User architect);
-	List<Dossier> findByTechnicien(User technicien);
-	List<Dossier> findByTypeDossier(TypeDossier typeDossier);
-	List<Dossier> findByCommission(Commission commission);
-//	List<Dossier> findBySuperficieLowerThan(BigDecimal superficie);
-//    List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
-    public void save(Dossier dossier);
+	public void save(Dossier dossier);
+	public List<Dossier> findByDateArrive(Date date);
+	public List<Dossier> findByClient(String ref);
+	public List<Dossier> findByArchitect(User architect);
+	public List<Dossier> findByTechnicien(User technicien);
+	public List<Dossier> findByTypeDossier(TypeDossier typeDossier);
+	public List<Dossier> findByCommission(Commission commission);
+	public List<Dossier> findBySuperficieLessThan(BigDecimal superficie);
+	public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
+	public int setAvis(String ref, boolean avis);
 }
