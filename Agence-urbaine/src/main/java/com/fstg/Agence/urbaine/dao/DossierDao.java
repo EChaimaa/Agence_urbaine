@@ -21,12 +21,12 @@ import com.fstg.Agence.urbaine.bean.User;
 public interface DossierDao extends JpaRepository<Dossier, Long> {
     public Dossier findByRef(String ref);
     public boolean existsByRef(String ref);
-    List<Dossier> findByDateArrive(Date date);
-    List<Dossier> findByClient(Client client);
-    List<Dossier> findByArchitect(User architect);
-    List<Dossier> findByTechnicien(User technicien);
-    List<Dossier> findByTypeDossier(TypeDossier typeDossier);
-    List<Dossier> findByCommission(Commission commission);
-    List<Dossier> findBySuperficieLessThan(BigDecimal superficie);
-    List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
+    public List<Dossier> findByDateArrive(Date date);
+    public List<Dossier> findByClient(Client client);
+    public List<Dossier> findByArchitect(User architect);
+    public List<Dossier> findByTechnicien(User technicien);
+    public List<Dossier> findByTypeDossier(TypeDossier typeDossier);
+    public Dossier findByCommission(Commission commission);
+    public List<Dossier> findBySuperficieLessThan(BigDecimal superficie);
+    public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
 }
