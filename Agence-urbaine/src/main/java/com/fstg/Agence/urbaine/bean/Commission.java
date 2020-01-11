@@ -33,9 +33,7 @@ public class Commission {
 	private MembreCommission chefCommission;
 	@OneToMany(mappedBy = "commission")
 	private List<CommissionItem> commissionItems;
-	@ManyToOne
-	private TypeProjet projet;
-	
+
 	@OneToMany
 	private List<Observation> observations;
 	
@@ -44,14 +42,7 @@ public class Commission {
 		return chefCommission;
 	}
 
-	public TypeProjet getProjet() {
-		return projet;
-	}
-
-	public void setProjet(TypeProjet projet) {
-		this.projet = projet;
-	}
-
+	
 	public List<Observation> getObservations() {
 		return observations;
 	}
@@ -138,7 +129,7 @@ public class Commission {
 	public String toString() {
 		return "Commission [id=" + id + ", ref=" + ref + ", dateDepartCommission=" + dateDepartCommission
 				+ ", dateFinCommission=" + dateFinCommission + ", typeCommission=" + typeCommission
-				+ ", chefCommission=" + chefCommission + ", projet=" + projet + "]";
+				+ ", chefCommission=" + chefCommission + "]";
 	}
 
 }
