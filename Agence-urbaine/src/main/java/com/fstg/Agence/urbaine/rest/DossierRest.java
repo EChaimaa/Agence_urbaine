@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fstg.Agence.urbaine.bean.Commission;
 import com.fstg.Agence.urbaine.bean.Dossier;
 import com.fstg.Agence.urbaine.service.ClientService;
 import com.fstg.Agence.urbaine.service.DossierService;
@@ -69,6 +70,11 @@ public class DossierRest {
 	@GetMapping("/client/{ref}")
 	public List<Dossier> findByClient(@PathVariable String ref){
 		return dossierService.findByClient(ref);
+	}
+	
+	@GetMapping("/commission/")
+	public Dossier findByCommission(@RequestBody Commission commission) {
+		return dossierService.findByCommission(commission);
 	}
 	
 }
