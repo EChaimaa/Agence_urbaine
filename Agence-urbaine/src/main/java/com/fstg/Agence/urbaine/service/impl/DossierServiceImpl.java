@@ -98,7 +98,8 @@ public class DossierServiceImpl implements DossierService {
 		if(! dd.existsByRef(ref)) {
 			return -1;
 		}
-		Dossier dossier = dd.findByRef(ref);
+		Dossier dossier = new Dossier();
+		dossier = dd.findByRef(ref);
 		dossier.setAvis(avis);
 		return 1;
 	}
