@@ -36,35 +36,19 @@ public class Commission {
 
 	@OneToMany
 	private List<Observation> observations;
-	
 
 	public MembreCommission getChefCommission() {
 		return chefCommission;
 	}
 
-	
-	public List<Observation> getObservations() {
-		return observations;
-	}
-
-	public void setObservations(List<Observation> observations) {
-		this.observations = observations;
-	}
-
-	public void setChefCommission(MembreCommission chefCommission) {
-		this.chefCommission = chefCommission;
-	}
-
 	public Commission() {
 	}
 
-	public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommission chefCommision,
-			List<CommissionItem> commissionItems) {
+	public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommission chefCommision) {
 		this.id = id;
 		this.dateDepartCommission = dateDepartCommission;
 		this.dateFinCommission = dateFinCommission;
 		this.chefCommission = chefCommision;
-		this.commissionItems = commissionItems;
 	}
 
 	public Long getId() {
@@ -123,6 +107,15 @@ public class Commission {
 
 	public void setTypeCommission(TypeCommission typeCommission) {
 		this.typeCommission = typeCommission;
+	}
+	
+	@JsonIgnore
+	public List<Observation> getObservations() {
+		return observations;
+	}
+	@JsonSetter
+	public void setObservations(List<Observation> observations) {
+		this.observations = observations;
 	}
 
 	@Override
