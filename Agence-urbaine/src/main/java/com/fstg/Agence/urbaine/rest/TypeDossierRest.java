@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,11 +23,13 @@ public class TypeDossierRest {
 		return dossierService.findAll();
 	}
 	
+	@PostMapping("/")
 	public void save(TypeDossier typeDossier) {
 		dossierService.save(typeDossier);
 	}
 	
-	public TypeDossier findByLibelle(String libelle) {
+	@GetMapping("/libelle/{libelle}")
+	public TypeDossier findByLibelle(@PathVariable String libelle) {
 		return dossierService.findByLibelle(libelle);
 	}
 }
