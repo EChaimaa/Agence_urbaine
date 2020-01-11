@@ -28,12 +28,6 @@ public class CommissionItemServiceImpl implements CommissionItemService {
 	}
 
 	@Override
-	public List<CommissionItem> findByCommissionAndMembreCommission(Commission commission,
-			MembreCommission membreCommission) {
-		return cid.findByCommissionAndMembreCommission(commission, membreCommission);
-	}
-
-	@Override
 	public List<CommissionItem> findByDateAffectation(Date date) {
 		return cid.findByDateAffectation(date);
 	}
@@ -41,6 +35,11 @@ public class CommissionItemServiceImpl implements CommissionItemService {
 	@Override
 	public List<CommissionItem> findAll() {
 		return cid.findAll();
+	}
+
+	@Override
+	public void save(CommissionItem commissionItem) {
+		cid.save(commissionItem);
 	}
 
 }

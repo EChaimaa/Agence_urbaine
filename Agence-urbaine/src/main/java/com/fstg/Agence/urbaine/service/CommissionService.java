@@ -23,4 +23,7 @@ public interface CommissionService {
 
 	public List<Commission> findByChefCommission(MembreCommission chefCommission);
 	
+	public void save(Commission commission);
+	
+	public int setAvisDossier(Commission commission);
 }

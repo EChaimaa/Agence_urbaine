@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,25 +48,6 @@ public class CommissionItemRest {
 		return commissionItemService.findByMembreCommission(membrecommission);
 	}
 
-	@GetMapping("/commission//Membre/{membreCommission}")
-	public List<CommissionItem> findByCommissionAndMembreCommission(@PathVariable String refCommission,
-			@PathVariable String refMembreCommission) {
-
-		Commission commission = cs.findByRef(refCommission);
-		if (commission == null) {
-			return null;
-		}
-
-		MembreCommission membreCommission = mcs.findByRef(refMembreCommission);
-		
-		if (membreCommission == null) {
-			return null;
-		}
-
-		return commissionItemService.findByCommissionAndMembreCommission(commission, membreCommission);
-
-	}
-
 	@GetMapping("/date/{date}")
 	public List<CommissionItem> findByDate(@PathVariable Date date) {
 		return commissionItemService.findByDateAffectation(date);
@@ -74,5 +56,10 @@ public class CommissionItemRest {
 	@GetMapping("/")
 	public List<CommissionItem> findAll() {
 		return commissionItemService.findAll();
+	}
+	
+	@PostMapping("/")
+	public void save(@RequestBody CommissionItem commissionItem) {
+		commissionItemService.save(commissionItem);
 	}
 }

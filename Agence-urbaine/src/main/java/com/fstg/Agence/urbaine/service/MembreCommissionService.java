@@ -6,5 +6,6 @@ import com.fstg.Agence.urbaine.bean.MembreCommission;
 
 public interface MembreCommissionService {
 	public List<MembreCommission> findAll();
-	public MembreCommission findByRef(String ref);
+	public MembreCommission findByNomAndPrenom(String nom,String prenom);
+	public void save(MembreCommission membreCommission);
 }
