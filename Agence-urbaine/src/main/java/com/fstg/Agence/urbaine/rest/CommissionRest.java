@@ -57,8 +57,8 @@ public class CommissionRest {
 	public void save(@RequestBody Commission commission) {
 		commissionService.save(commission);
 	}
-	@PutMapping("/")
-	public int setAvisDossier(@RequestBody Commission commission) {
-		return commissionService.setAvisDossier(commission);
+	@PutMapping("/vote/{refCommission}")
+	public int setAvisDossier(@PathVariable String refCommission) {
+		return commissionService.setAvisDossier(refCommission);
 	}
 }

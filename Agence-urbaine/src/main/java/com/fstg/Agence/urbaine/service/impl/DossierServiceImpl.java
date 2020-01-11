@@ -94,13 +94,12 @@ public class DossierServiceImpl implements DossierService {
 	}
 
 	@Override
-	public int setAvis(String ref, int avis) {
-		if(! dd.existsByRef(ref)) {
+	public int setAvis(Dossier dossier, int avis) {
+		if(dossier == null) {
 			return -1;
 		}
-		Dossier dossier = new Dossier();
-		dossier = dd.findByRef(ref);
 		dossier.setAvis(avis);
+		dd.save(dossier);
 		return 1;
 	}
 

@@ -18,4 +18,5 @@ public interface CommissionItemService {
 	public void save(CommissionItem commissionItem);
 	
 	public List<CommissionItem> findAll();
+	
 }

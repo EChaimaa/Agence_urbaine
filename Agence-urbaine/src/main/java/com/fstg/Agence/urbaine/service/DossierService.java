@@ -23,5 +23,5 @@ public interface DossierService {
 	public Dossier findByCommission(Commission commission);
 	public List<Dossier> findBySuperficieLessThan(BigDecimal superficie);
 	public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
-	public int setAvis(String ref, int avis);
+	public int setAvis(Dossier dossier, int avis);
 }

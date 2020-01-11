@@ -25,5 +25,5 @@ public interface CommissionService {
 	
 	public void save(Commission commission);
 	
-	public int setAvisDossier(Commission commission);
+	public int setAvisDossier(String refCommission);
 }
