@@ -17,5 +17,9 @@ TypeCommissionDao tcd;
 	public List<TypeCommission> findAll() {
 		return tcd.findAll();
 	}
+	@Override
+	public void save(TypeCommission typeCommission) {
+		tcd.save(typeCommission);
+	}
 
 }
