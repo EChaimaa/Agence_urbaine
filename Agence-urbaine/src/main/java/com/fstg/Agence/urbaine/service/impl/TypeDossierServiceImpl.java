@@ -2,24 +2,33 @@ package com.fstg.Agence.urbaine.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fstg.Agence.urbaine.bean.TypeDossier;
+import com.fstg.Agence.urbaine.dao.TypeDossierDao;
 import com.fstg.Agence.urbaine.service.TypeDossierService;
 
 @Service
 public class TypeDossierServiceImpl implements TypeDossierService {
+	@Autowired
+	TypeDossierDao tdd;
 
 	@Override
 	public List<TypeDossier> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return tdd.findAll();
 	}
 
 	@Override
-	public List<TypeDossier> findByNom(String Nom) {
-		// TODO Auto-generated method stub
-		return null;
+	public TypeDossier findByLibelle(String libelle) {
+		return tdd.findByLibelle(libelle);
 	}
+
+	@Override
+	public void save(TypeDossier typeDossier) {
+		tdd.save(typeDossier);
+	}
+
+	
 
 }
