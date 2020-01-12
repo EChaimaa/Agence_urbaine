@@ -24,4 +24,5 @@ public interface DossierService {
 	public List<Dossier> findBySuperficieLessThan(BigDecimal superficie);
 	public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
 	public int setAvis(Dossier dossier, int avis);
+	public int setSerficie(Dossier dossier, BigDecimal superficie);
 }

@@ -103,4 +103,14 @@ public class DossierServiceImpl implements DossierService {
 		return 1;
 	}
 
+	@Override
+	public int setSerficie(Dossier dossier, BigDecimal superficie) {
+		if(dossier == null) {
+			return -1;
+		}
+		dossier.setSuperficie(superficie);
+		dd.save(dossier);
+		return 1;
+	}
+
 }
