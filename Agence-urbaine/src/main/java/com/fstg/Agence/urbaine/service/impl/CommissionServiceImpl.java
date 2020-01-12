@@ -85,13 +85,18 @@ public class CommissionServiceImpl implements CommissionService {
 		for (CommissionItem commissionItem : cis.findByCommission(commission)) {
 			count += commissionItem.getVote();
 		}
-		
-		//System.out.println("Count: "+count);
-		
 		Dossier dossier = ds.findByCommission(commission);
 		if(dossier == null) return -2;
+		int avis=0;
+		if(count > 0) {
+			avis = 1;
+		}else if (count < 0) {
+			avis = -1;
+		}else {
+			avis = 0;
+		}
 
-		return ds.setAvis(dossier, count);
+		return ds.setAvis(dossier, avis);
 
 	}
 

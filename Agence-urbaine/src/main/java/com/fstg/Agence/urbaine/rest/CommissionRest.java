@@ -30,8 +30,8 @@ public class CommissionRest {
 	public List<Commission> findAll() {
 		return commissionService.findAll();
 	}
-	@GetMapping("/dateDepart/{date}")
-	public List<Commission> findByDateDepartCommission(@PathVariable Date date) {
+	@GetMapping("/dateDepart/")
+	public List<Commission> findByDateDepartCommission(@RequestBody Date date) {
 		return commissionService.findByDateDepartCommission(date);
 	}
 	@GetMapping("/dateFin/{date}")
