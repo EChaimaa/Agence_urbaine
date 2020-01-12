@@ -23,7 +23,7 @@ public class TauxTaxe {
 	@Temporal(TemporalType.DATE)
 	private Date dateDepartApplication;
 	@Temporal(TemporalType.DATE)
-	private Date dateFintApplication;
+	private Date dateFinApplication;
 	private Double montant;
 
 	@ManyToOne
@@ -38,7 +38,7 @@ public class TauxTaxe {
 			TypeDossier typeDossier, TypeProjet typeProjet) {
 		this.id = id;
 		this.dateDepartApplication = dateDepartApplication;
-		this.dateFintApplication = dateFintApplication;
+		this.dateFinApplication = dateFintApplication;
 		this.montant = montant;
 		this.typeDossier = typeDossier;
 		this.typeProjet = typeProjet;
@@ -61,11 +61,11 @@ public class TauxTaxe {
 	}
 
 	public Date getDateFintApplication() {
-		return dateFintApplication;
+		return dateFinApplication;
 	}
 
 	public void setDateFintApplication(Date dateFintApplication) {
-		this.dateFintApplication = dateFintApplication;
+		this.dateFinApplication = dateFintApplication;
 	}
 
 	public Double getMontant() {
@@ -95,7 +95,7 @@ public class TauxTaxe {
 	@Override
 	public String toString() {
 		return "TauxTaxe [id=" + id + ", dateDepartApplication=" + dateDepartApplication + ", dateFintApplication="
-				+ dateFintApplication + ", montant=" + montant + ", typeDossier=" + typeDossier + ", typeProjet="
+				+ dateFinApplication + ", montant=" + montant + ", typeDossier=" + typeDossier + ", typeProjet="
 				+ typeProjet + "]";
 	}
 
