@@ -16,10 +16,14 @@ public interface TauxTaxeDao extends JpaRepository<TauxTaxe, Long> {
 	public List<TauxTaxe> findByTypeDossier(TypeDossier typeDossier);
 
 	public List<TauxTaxe> findByTypeProjet(TypeProjet typeProjet);
-
-	public void save(TypeDossier typeDossier);
-
-	//public List<TauxTaxe> findByDateDepartApplicationLowerThan(Date date);
-
-	public List<TauxTaxe> findByDateFinApplicationGreaterThan(Date date);
+	
+	public List<TauxTaxe> findByTypeDossierAndTypeProjet(TypeDossier typeDossier, TypeProjet typeProjet);
+	
+	public List<TauxTaxe> findByDateDepartApplicationBefore(Date date);
+	
+	public List<TauxTaxe> findByDateFinApplicationAfter(Date date);
+	
+	public TauxTaxe findByTypeDossierAndTypeProjetAndDateDepartApplicationBeforeAndDateFinApplicationAfter(TypeDossier typeDossier, TypeProjet typeProjet, Date date, Date date2);
+	
+	public boolean existsByTypeDossierAndTypeProjetAndDateDepartApplicationAndDateFinApplication(TypeDossier typeDossier, TypeProjet typeProjet, Date dateDepart, Date dateFin);
 }

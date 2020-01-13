@@ -25,4 +25,9 @@ public interface DossierService {
 	public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
 	public int setAvis(Dossier dossier, int avis);
 	public int setSerficie(Dossier dossier, BigDecimal superficie);
+	public int setMontantAPayer(Dossier dossier, BigDecimal montantAPayer);
+	
+	public int payer(String refDossier, BigDecimal montant, Date date);
+	
+	public List<Dossier> dossiersNonPayes();
 }

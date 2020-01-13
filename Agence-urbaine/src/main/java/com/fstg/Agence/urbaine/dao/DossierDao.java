@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.fstg.Agence.urbaine.bean.Client;
 import com.fstg.Agence.urbaine.bean.Commission;
@@ -29,4 +30,7 @@ public interface DossierDao extends JpaRepository<Dossier, Long> {
     public Dossier findByCommission(Commission commission);
     public List<Dossier> findBySuperficieLessThan(BigDecimal superficie);
     public List<Dossier> findBySuperficieGreaterThan(BigDecimal superficie);
+    
+    @Query("Select d from Dossier d where d.montantAPayer > d.montantPaye")
+    public List<Dossier> findDossiersNonPayes();
 }

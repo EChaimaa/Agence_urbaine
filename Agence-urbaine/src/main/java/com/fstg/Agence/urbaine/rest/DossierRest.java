@@ -1,12 +1,15 @@
 package com.fstg.Agence.urbaine.rest;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -77,4 +80,13 @@ public class DossierRest {
 		return dossierService.findByCommission(commission);
 	}
 	
+	@GetMapping("/nonPayes/")
+	public List<Dossier> findDossiersNonPayes() {
+		return dossierService.dossiersNonPayes();
+	}
+	
+	@PutMapping("/payer/{ref}/{montant}/{date}")
+	public int payer(@PathVariable String ref, @PathVariable BigDecimal montant, @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
+		return dossierService.payer(ref, montant, date);
+	}
 }
