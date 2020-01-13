@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,11 +32,11 @@ public class CommissionRest {
 		return commissionService.findAll();
 	}
 	@GetMapping("/dateDepart/{date}")
-	public List<Commission> findByDateDepartCommission(@PathVariable  Date date) {
+	public List<Commission> findByDateDepartCommission(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
 		return commissionService.findByDateDepartCommission(date);
 	}
 	@GetMapping("/dateFin/{date}")
-	public List<Commission> findByDateFinCommission(@PathVariable Date date) {
+	public List<Commission> findByDateFinCommission(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
 		return commissionService.findByDateFinCommission(date);
 	}
 
@@ -45,13 +46,18 @@ public class CommissionRest {
 	}
 	
 	@GetMapping("/dateSup/{date}")
-	public List<Commission> findByDateFinCommissionBefore(@PathVariable Date date) {
+	public List<Commission> findByDateFinCommissionBefore(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
 		return commissionService.findByDateFinCommissionBefore(date);
 	}
 	
 	@GetMapping("/dateInf/{date}")
-	public List<Commission> findByDateFinCommissionAfter(@PathVariable Date date) {
+	public List<Commission> findByDateFinCommissionAfter(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
 		return commissionService.findByDateDepartCommissionAfter(date);
+	}
+	
+	@GetMapping("/dateActuelle/{date}")
+	public List<Commission> findCommissionGoingOn(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)Date date) {
+		return commissionService.findCommissionGoingOn(date);
 	}
 	@PostMapping("/")
 	public void save(@RequestBody Commission commission) {
