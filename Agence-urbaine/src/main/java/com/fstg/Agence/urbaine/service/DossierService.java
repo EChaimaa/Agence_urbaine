@@ -30,4 +30,12 @@ public interface DossierService {
 	public int payer(String refDossier, BigDecimal montant, Date date);
 	
 	public List<Dossier> dossiersNonPayes();
+	
+	public List<Dossier> findDossierNonFactures();
+	
+	public List<Dossier> findDossierValides();
+	
+	public List<Dossier> findDossierNonValides();
+	
+	public List<Dossier> findDossierWithAvisNeutre();
 }

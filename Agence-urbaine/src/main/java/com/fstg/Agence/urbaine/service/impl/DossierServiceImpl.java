@@ -145,4 +145,24 @@ public class DossierServiceImpl implements DossierService {
 		return 3;
 	}
 
+	@Override
+	public List<Dossier> findDossierNonFactures() {
+		return dd.findDossierNonFactures();
+	}
+
+	@Override
+	public List<Dossier> findDossierValides() {
+		return dd.findByAvis(1);
+	}
+
+	@Override
+	public List<Dossier> findDossierNonValides() {
+		return dd.findByAvis(-1);
+	}
+
+	@Override
+	public List<Dossier> findDossierWithAvisNeutre() {
+		return dd.findByAvis(0);
+	}
+
 }

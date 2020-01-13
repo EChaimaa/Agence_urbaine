@@ -89,4 +89,25 @@ public class DossierRest {
 	public int payer(@PathVariable String ref, @PathVariable BigDecimal montant, @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
 		return dossierService.payer(ref, montant, date);
 	}
+	
+	
+	@GetMapping("/nonFactures/")
+	public List<Dossier> findDossierNonFactures(){
+		return dossierService.findDossierNonFactures();
+	}
+
+	@GetMapping("/valides/")
+	public List<Dossier> findDossierValides() {
+		return dossierService.findDossierValides();
+	}
+
+	@GetMapping("/nonValides/")
+	public List<Dossier> findDossierNonValides() {
+		return dossierService.findDossierNonValides();
+	}
+
+	@GetMapping("/avisNeutre/")
+	public List<Dossier> findDossierWithAvisNeutre() {
+		return dossierService.findDossierWithAvisNeutre();
+	}
 }

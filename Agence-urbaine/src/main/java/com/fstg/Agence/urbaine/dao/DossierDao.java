@@ -22,6 +22,7 @@ import com.fstg.Agence.urbaine.bean.User;
 public interface DossierDao extends JpaRepository<Dossier, Long> {
     public Dossier findByRef(String ref);
     public boolean existsByRef(String ref);
+    public List<Dossier> findByAvis(int avis);
     public List<Dossier> findByDateArrive(Date date);
     public List<Dossier> findByClient(Client client);
     public List<Dossier> findByArchitect(User architect);
@@ -33,4 +34,7 @@ public interface DossierDao extends JpaRepository<Dossier, Long> {
     
     @Query("Select d from Dossier d where d.montantAPayer > d.montantPaye")
     public List<Dossier> findDossiersNonPayes();
+    
+    @Query("Select d from Dossier d where d.montantAPayer IS NULL or d.montantAPayer = 0")
+    public List<Dossier> findDossierNonFactures();
 }
