@@ -8,12 +8,16 @@ import com.fstg.Agence.urbaine.bean.TypeDossier;
 import com.fstg.Agence.urbaine.bean.TypeProjet;
 
 public interface TauxTaxeService {
-	public void save(TauxTaxe tauxTaxe);
-	public int exists(TauxTaxe tauxTaxe);
+	public int save(TauxTaxe tauxTaxe);
+	public boolean exists(TauxTaxe tauxTaxe);
 	public List<TauxTaxe> findByTypeDossier(TypeDossier dossier);
 	public List<TauxTaxe> findByTypeProjet(TypeProjet projet);
 	public List<TauxTaxe> findByDateDepartApplicationLowerThan(Date date);
 	public List<TauxTaxe> findByDateFinApplicationGreaterThan(Date date);
-	public TauxTaxe findTaxe(Date daateDepart, Date dateFin, TypeDossier typeDossier, TypeProjet typeProjet);
+	public TauxTaxe findTaxe(Date dateDepart, Date dateFin, TypeDossier typeDossier, TypeProjet typeProjet);
 	public List<TauxTaxe> findAll();
+	public List<TauxTaxe> findByTypeDossierAndTypeProjet(TypeDossier typeDossier, TypeProjet typeProjet);
+	public TauxTaxe findByTypeDossierAndTypeProjetAndDateDepartApplicationBeforeAndDateFinApplicationAfter(TypeDossier typeDossier, TypeProjet typeProjet, Date date, Date date2Unused);
+	public int setMontantDossier(String refDossier);
+	
 	}

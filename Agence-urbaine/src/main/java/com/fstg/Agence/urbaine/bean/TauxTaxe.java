@@ -5,6 +5,7 @@
  */
 package com.fstg.Agence.urbaine.bean;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -15,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+
 @Entity
 public class TauxTaxe {
 	@Id
@@ -24,7 +26,7 @@ public class TauxTaxe {
 	private Date dateDepartApplication;
 	@Temporal(TemporalType.DATE)
 	private Date dateFinApplication;
-	private Double montant;
+	private BigDecimal taux;
 
 	@ManyToOne
 	private TypeDossier typeDossier;
@@ -32,14 +34,18 @@ public class TauxTaxe {
 	private TypeProjet typeProjet;
 
 	public TauxTaxe() {
+		this.taux = BigDecimal.ZERO;
 	}
 
-	public TauxTaxe(Long id, Date dateDepartApplication, Date dateFintApplication, Double montant,
+	public TauxTaxe(Long id, Date dateDepartApplication, Date dateFintApplication, BigDecimal taux,
 			TypeDossier typeDossier, TypeProjet typeProjet) {
 		this.id = id;
 		this.dateDepartApplication = dateDepartApplication;
 		this.dateFinApplication = dateFintApplication;
-		this.montant = montant;
+		
+		if(taux == null) this.taux = BigDecimal.ZERO;
+		else this.taux = taux;
+		
 		this.typeDossier = typeDossier;
 		this.typeProjet = typeProjet;
 	}
@@ -60,20 +66,22 @@ public class TauxTaxe {
 		this.dateDepartApplication = dateDepartApplication;
 	}
 
-	public Date getDateFintApplication() {
+	
+
+	public Date getDateFinApplication() {
 		return dateFinApplication;
 	}
 
-	public void setDateFintApplication(Date dateFintApplication) {
-		this.dateFinApplication = dateFintApplication;
+	public void setDateFinApplication(Date dateFinApplication) {
+		this.dateFinApplication = dateFinApplication;
 	}
 
-	public Double getMontant() {
-		return montant;
+	public BigDecimal getTaux() {
+		return taux;
 	}
 
-	public void setMontant(Double montant) {
-		this.montant = montant;
+	public void setTaux(BigDecimal taux) {
+		this.taux = taux;
 	}
 
 	public TypeDossier getTypeDossier() {
@@ -95,7 +103,7 @@ public class TauxTaxe {
 	@Override
 	public String toString() {
 		return "TauxTaxe [id=" + id + ", dateDepartApplication=" + dateDepartApplication + ", dateFintApplication="
-				+ dateFinApplication + ", montant=" + montant + ", typeDossier=" + typeDossier + ", typeProjet="
+				+ dateFinApplication + ", taux=" + taux + ", typeDossier=" + typeDossier + ", typeProjet="
 				+ typeProjet + "]";
 	}
 

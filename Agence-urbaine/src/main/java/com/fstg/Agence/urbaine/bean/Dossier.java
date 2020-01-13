@@ -30,18 +30,19 @@ public class Dossier {
 	@Temporal(TemporalType.DATE)
 	private Date dateArrive;
 	private String lieuProjet;
+	private BigDecimal superficie;
 	private String descriptionProjet;
 	private int avis;
+	private BigDecimal montantAPayer;
+	private BigDecimal montantPaye;
+	@Temporal(TemporalType.DATE)
+	private Date datePaiement;
 	@ManyToOne
 	private User architect;
 	@ManyToOne
 	private Client client;
-	private BigDecimal superficie;
 	@ManyToOne
 	private User technicien;
-	private BigDecimal montantPaye;
-	@Temporal(TemporalType.DATE)
-	private Date datePaiement;
 
 	@ManyToOne
 	private TypeDossier typeDossier;
@@ -53,27 +54,45 @@ public class Dossier {
 	private List<Observation> observations;
 
 	public Dossier() {
+		this.superficie = BigDecimal.ZERO;
+		this.montantAPayer = BigDecimal.ZERO;
+		this.montantPaye = BigDecimal.ZERO;
 	}
 
-	public Dossier(Long id, String reference, Date dateArrive, String lieuProjet, String descriptionProjet,
-			User architect, Client client, BigDecimal superficie, User technicien, BigDecimal montantPaye,
-			Date datePaiement, TypeDossier typeDossier, TypeProjet typeProjet, Commission commission) {
+	
+
+	public Dossier(Long id, String ref, Date dateArrive, String lieuProjet, String descriptionProjet, int avis,
+			User architect, Client client, BigDecimal superficie, User technicien, BigDecimal montantAPayer,
+			BigDecimal montantPaye, Date datePaiement, TypeDossier typeDossier, TypeProjet typeProjet,
+			Commission commission) {
+		super();
 		this.id = id;
-		this.ref = reference;
+		this.ref = ref;
 		this.dateArrive = dateArrive;
 		this.lieuProjet = lieuProjet;
 		this.descriptionProjet = descriptionProjet;
+		this.avis = avis;
 		this.architect = architect;
 		this.client = client;
-		this.superficie = superficie;
+		
+		if(superficie == null) this.superficie = BigDecimal.ZERO;
+		else this.superficie = superficie;
+		
 		this.technicien = technicien;
-		this.montantPaye = montantPaye;
+		
+		if(montantAPayer == null) this.montantAPayer = BigDecimal.ZERO;
+		else this.montantAPayer = montantAPayer;
+		
+		if(montantPaye == null) this.montantPaye = BigDecimal.ZERO;
+		else this.montantPaye = montantPaye;
+		
 		this.datePaiement = datePaiement;
 		this.typeDossier = typeDossier;
 		this.typeProjet = typeProjet;
 		this.commission = commission;
-		this.avis = 0;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -209,14 +228,24 @@ public class Dossier {
 		this.avis = avis;
 	}
 
+	public BigDecimal getMontantAPayer() {
+		return montantAPayer;
+	}
+
+	public void setMontantAPayer(BigDecimal montantAPayer) {
+		this.montantAPayer = montantAPayer;
+	}
+
 	@Override
 	public String toString() {
 		return "Dossier [id=" + id + ", ref=" + ref + ", dateArrive=" + dateArrive + ", lieuProjet=" + lieuProjet
 				+ ", descriptionProjet=" + descriptionProjet + ", avis=" + avis + ", architect=" + architect
-				+ ", client=" + client + ", superficie=" + superficie + ", technicien=" + technicien + ", montantPaye="
-				+ montantPaye + ", datePaiement=" + datePaiement + ", typeDossier=" + typeDossier + ", typeProjet="
-				+ typeProjet + ", commission=" + commission + "]";
+				+ ", client=" + client + ", superficie=" + superficie + ", technicien=" + technicien + ", montantAPayer="
+				+ montantAPayer + ", montantPaye=" + montantPaye + ", datePaiement=" + datePaiement + ", typeDossier="
+				+ typeDossier + ", typeProjet=" + typeProjet + ", commission=" + commission + "]";
 	}
+
+	
 
 	
 	

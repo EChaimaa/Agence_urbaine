@@ -113,4 +113,36 @@ public class DossierServiceImpl implements DossierService {
 		return 1;
 	}
 
+	@Override
+	public int setMontantAPayer(Dossier dossier, BigDecimal montantAPayer) {
+		if(dossier == null) {
+			return -1;
+		}
+		
+		dossier.setMontantAPayer(montantAPayer);
+		dd.save(dossier);
+		return 1;
+	}
+
+	@Override
+	public List<Dossier> dossiersNonPayes() {
+		return dd.findDossiersNonPayes();
+	}
+
+	@Override
+	public int payer(String refDossier, BigDecimal montant, Date date) {
+		if(montant == null || date == null || montant.doubleValue() <= 0)  return -1;
+		
+		Dossier dossier = findByRef(refDossier);
+		if(dossier == null || dossier.getMontantAPayer() == BigDecimal.ZERO) return -2;
+		
+		if(montant.compareTo(dossier.getMontantAPayer()) != 0) return -3;
+		
+		dossier.setMontantPaye(montant);
+		dossier.setDatePaiement(date);
+		save(dossier);
+		
+		return 3;
+	}
+
 }
