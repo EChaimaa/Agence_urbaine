@@ -115,7 +115,7 @@ public class DossierServiceImpl implements DossierService {
 		if(dossier.getFois() == 3) archiver(dossier, false, false);//archiver le dossier si il a deja eu 3 chances
 		
 		dossier.setAvis(avis);
-		dossier.setFois(dossier.getFois() + 1);
+		dossier.setFois(dossier.getFois() + 1); // on incrémente le nbre de fois
 		dd.save(dossier);
 		return 1;
 	}
@@ -227,7 +227,7 @@ public class DossierServiceImpl implements DossierService {
 			} else {
 				if (simul = false) {
 
-					DossierArchive dossierArchive = new DossierArchive(dossier);
+					DossierArchive dossierArchive = new DossierArchive(dossier); // constructeur dossier -> dossierArchive
 
 					dossierArchiServ.save(dossierArchive);
 
