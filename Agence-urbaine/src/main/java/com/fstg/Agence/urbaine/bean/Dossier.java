@@ -33,8 +33,22 @@ public class Dossier {
 	private BigDecimal superficie;
 	private String descriptionProjet;
 	private int avis;
+	private int fois;
 	private BigDecimal montantAPayer;
 	private BigDecimal montantPaye;
+	@Temporal(TemporalType.DATE)
+	private Date dateLimitPaiement;
+	public Date getDateLimitPaiement() {
+		return dateLimitPaiement;
+	}
+
+
+
+	public void setDateLimitPaiement(Date dateLimitPaiement) {
+		this.dateLimitPaiement = dateLimitPaiement;
+	}
+
+
 	@Temporal(TemporalType.DATE)
 	private Date datePaiement;
 	@ManyToOne
@@ -57,6 +71,7 @@ public class Dossier {
 		this.superficie = BigDecimal.ZERO;
 		this.montantAPayer = BigDecimal.ZERO;
 		this.montantPaye = BigDecimal.ZERO;
+		this.fois = 0;
 	}
 
 	
@@ -65,13 +80,13 @@ public class Dossier {
 			User architect, Client client, BigDecimal superficie, User technicien, BigDecimal montantAPayer,
 			BigDecimal montantPaye, Date datePaiement, TypeDossier typeDossier, TypeProjet typeProjet,
 			Commission commission) {
-		super();
 		this.id = id;
 		this.ref = ref;
 		this.dateArrive = dateArrive;
 		this.lieuProjet = lieuProjet;
 		this.descriptionProjet = descriptionProjet;
 		this.avis = avis;
+		this.fois = 0;
 		this.architect = architect;
 		this.client = client;
 		
@@ -90,6 +105,29 @@ public class Dossier {
 		this.typeDossier = typeDossier;
 		this.typeProjet = typeProjet;
 		this.commission = commission;
+	}
+	
+	public Dossier(Dossier dossier) {
+		
+		this.setId(dossier.getId());
+		this.setRef(dossier.getRef());
+		this.setDateArrive(dossier.getDateArrive());
+		this.setLieuProjet(dossier.getLieuProjet());
+		this.setSuperficie(dossier.getSuperficie());
+		this.setDescriptionProjet(dossier.getDescriptionProjet());
+		this.setAvis(dossier.getAvis());
+		this.setFois(dossier.getFois());
+		this.setMontantAPayer(dossier.getMontantAPayer());
+		this.setMontantPaye(dossier.getMontantPaye());
+		this.setDatePaiement(dossier.getDatePaiement());
+		this.setArchitect(dossier.getArchitect());
+		this.setClient(dossier.getClient());
+		this.setTechnicien(dossier.getTechnicien());
+		this.setTypeDossier(dossier.getTypeDossier());
+		this.setTypeProjet(dossier.getTypeProjet());
+		this.setCommission(dossier.getCommission());
+		this.setObservations(dossier.getObservations());
+		
 	}
 
 
@@ -236,15 +274,30 @@ public class Dossier {
 		this.montantAPayer = montantAPayer;
 	}
 
+	public int getFois() {
+		return fois;
+	}
+
+
+
+	public void setFois(int fois) {
+		if(fois >= 0 && fois <= 3) this.fois = fois;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Dossier [id=" + id + ", ref=" + ref + ", dateArrive=" + dateArrive + ", lieuProjet=" + lieuProjet
-				+ ", descriptionProjet=" + descriptionProjet + ", avis=" + avis + ", architect=" + architect
-				+ ", client=" + client + ", superficie=" + superficie + ", technicien=" + technicien + ", montantAPayer="
-				+ montantAPayer + ", montantPaye=" + montantPaye + ", datePaiement=" + datePaiement + ", typeDossier="
-				+ typeDossier + ", typeProjet=" + typeProjet + ", commission=" + commission + "]";
+				+ ", superficie=" + superficie + ", descriptionProjet=" + descriptionProjet + ", avis=" + avis
+				+ ", fois=" + fois + ", montantAPayer=" + montantAPayer + ", montantPaye=" + montantPaye
+				+ ", dateLimitPaiement=" + dateLimitPaiement + ", datePaiement=" + datePaiement + ", architect="
+				+ architect + ", client=" + client + ", technicien=" + technicien + ", typeDossier=" + typeDossier
+				+ ", typeProjet=" + typeProjet + ", commission=" + commission + "]";
 	}
 
+
+	
 	
 
 	

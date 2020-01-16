@@ -38,4 +38,6 @@ public interface DossierService {
 	public List<Dossier> findDossierNonValides();
 	
 	public List<Dossier> findDossierWithAvisNeutre();
+	
+	public int archiver(Dossier dossier, boolean simul, boolean forcer);
 }
